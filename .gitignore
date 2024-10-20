@@ -71,6 +71,5 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-# Ignore Unity scenes and prefabs
+# Ignore Unity scenes
 /[Aa]ssets/[Ss]cenes/
-/[Aa]ssets/[Pp]refabs/
