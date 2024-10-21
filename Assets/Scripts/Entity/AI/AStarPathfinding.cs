@@ -18,7 +18,7 @@ public class AStarPathfinding : MonoBehaviour
 
         if (startNode.IsWall || targetNode.IsWall)
         {
-            return null; // Invalid start or target
+            return new List<Node>(); // Invalid start or target
         }
 
         // Initialize open and closed lists
@@ -73,7 +73,7 @@ public class AStarPathfinding : MonoBehaviour
         }
 
         // No path found
-        return null;
+        return new List<Node>();
     }
 
     // Reconstruct path by backtracking from target

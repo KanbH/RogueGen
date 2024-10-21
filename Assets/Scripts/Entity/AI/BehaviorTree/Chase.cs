@@ -1,7 +1,7 @@
-using MBT;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MBT;
 
 [AddComponentMenu("")]
 [MBTNode(name = "RogueGen/Chase")]

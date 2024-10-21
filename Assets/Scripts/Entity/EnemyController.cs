@@ -6,12 +6,16 @@ public class EnemyController : EntityController
 {
     [SerializeField] private float attack = 15f;
     [SerializeField] private float contactKnockbackMagnitude = 1000f;
+
     private CharacterStats _characterStats;
     private CharacterMovement _characterMovement;
+    private MoveToDestination _moveToDestination;
+
     void Awake()
     {
         _characterStats = GetComponent<CharacterStats>();
         _characterMovement = GetComponent<CharacterMovement>();
+        _moveToDestination = GetComponent<MoveToDestination>();
     }
 
     // Update is called once per frame

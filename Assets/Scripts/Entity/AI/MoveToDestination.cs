@@ -57,7 +57,7 @@ public class MoveToDestination : MonoBehaviour
         else 
         {
             _characterMovement.SetMovementDirection(Vector2.zero);
-            _path = null;
+            _path.Clear();
         }
     }
 
@@ -68,6 +68,12 @@ public class MoveToDestination : MonoBehaviour
 
     public bool HavePath()
     {
-        return _path != null;
+        return _path.Count == 0;
+    }
+
+    public void SetIdle()
+    {
+        _path.Clear();
+        _characterMovement.SetMovementDirection(Vector2.zero);
     }
 }
