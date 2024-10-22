@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private GameObject target; // What GameObject the camera will follow
-    public Vector3 offset = new Vector3(0f,0f,-10f); // Offset between the camera and the GameObject
-    public float smoothSpeed = 0.125f; // Smoothing factor for camera movement
+    [SerializeField] private GameObject _followTarget;
+    [SerializeField] private Vector3 _offset = new Vector3(0f, 0f, -10f);
+    [SerializeField] private float _smoothSpeed = 0.125f;
 
     void LateUpdate()
     {
-        if (target != null)
+        if (_followTarget != null)
         {
             // Calculate the desired position of the camera
-            Vector3 desiredPosition = target.transform.position + offset;
+            Vector3 desiredPosition = _followTarget.transform.position + _offset;
             // Smoothly interpolate towards the desired position
-            Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+            Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, _smoothSpeed);
             // Update the camera's position
             transform.position = smoothedPosition;
         }
@@ -23,6 +23,6 @@ public class CameraFollow : MonoBehaviour
 
     public void SetTarget(GameObject newTarget)
     {
-        target = newTarget;
+        _followTarget = newTarget;
     }
 }

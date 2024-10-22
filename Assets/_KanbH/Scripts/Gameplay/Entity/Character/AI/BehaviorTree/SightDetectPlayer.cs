@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MBT;
+using CharlieMadeAThing.NeatoTags.Core;
 
 [AddComponentMenu("")]
 [MBTNode(name = "RogueGen/SightDetectPlayer")]
@@ -28,7 +29,7 @@ public class SightDetectPlayer : Leaf
         
         foreach (var hit in _rayHits )
         {
-            if (hit.collider.gameObject.CompareTag("Player"))
+            if (hit.collider.gameObject.HasTag("Player"))
             {
                 return NodeResult.success;
             }

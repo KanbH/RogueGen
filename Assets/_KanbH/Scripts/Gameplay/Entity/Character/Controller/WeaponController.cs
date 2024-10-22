@@ -1,3 +1,4 @@
+using CharlieMadeAThing.NeatoTags.Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -55,7 +56,7 @@ public class WeaponController : MonoBehaviour
 
     private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.HasTag("Enemy"))
         {
             PlayerController playerController = gameObject.GetComponentInParent<PlayerController>();
             playerController.DealDamage(collision.gameObject);

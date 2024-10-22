@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 1733080297, guid: f22834168135b0d4286e5cc52ed80f64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -383,7 +383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedEditorNode: {fileID: 4238533048865893095}
   repeatOnFinish: 1
-  maxExecutionsPerTick: 1000
+  maxExecutionsPerTick: 100
   parent: {fileID: 0}
 --- !u!114 &6212908603989902281
 MonoBehaviour:
@@ -627,7 +627,7 @@ MonoBehaviour:
     blackboard: {fileID: 2715802250339210328}
     key: PlayerTransform
     constantValue: {fileID: 0}
-  SightRange: 5
+  SightRange: 10
 --- !u!114 &6046471083961103189
 MonoBehaviour:
   m_ObjectHideFlags: 0

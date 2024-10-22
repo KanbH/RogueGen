@@ -2,9 +2,8 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags:
-  - Enemy
+  serializedVersion: 3
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -42,9 +41,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Tilemap
+  - name: FloorTilemap
     uniqueID: 3697322549
     locked: 0
-  - name: Character
+  - name: WallTilemap
     uniqueID: 1098804831
     locked: 0
+  - name: Character
+    uniqueID: 3470581481
+    locked: 0
+  m_RenderingLayers:
+  - Default

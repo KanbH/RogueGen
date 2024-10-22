@@ -1,3 +1,4 @@
+using CharlieMadeAThing.NeatoTags.Core;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,7 +27,7 @@ public class EnemyController : EntityController
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.HasTag("Player"))
         {
             DealDamage(collision.gameObject);
             DealKnockback(collision.gameObject, contactKnockbackMagnitude);
