@@ -6,8 +6,12 @@ public class PlayerController : EntityController
 {
     [SerializeField] public GameObject weaponPrefab;
 
+    [SerializeField] private float _weaponSwingCooldown;
+
     private PlayerMovement _playerMovement;
     private CharacterStats _characterStats;
+
+    private float lastSwingTime = -Mathf.Infinity;
 
     void Awake()
     {
@@ -18,11 +22,25 @@ public class PlayerController : EntityController
     // Update is called once per frame
     void Update()
     {
+        // Check if the cooldown has passed before allowing a swing
+        if (Time.time >= lastSwingTime + _weaponSwingCooldown)
+        {
+            // Check for input to swing (you can replace this with a more complex input system later)
+            DetectSwingInput();
+        }
+    }
+
+    void DetectSwingInput()
+    {
+        // Detect left mouse button press
         if (Input.GetMouseButtonDown(0)) // Left mouse button or any attack key
         {
             Vector2 swingDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
 
-            // Spawn and swing weapon
+            // Update the time of the last swing to the current time
+            lastSwingTime = Time.time;
+
+            // Spawn and swing the weapon
             SwingWeapon(swingDirection);
         }
     }

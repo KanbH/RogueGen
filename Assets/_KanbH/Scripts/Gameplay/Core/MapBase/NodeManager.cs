@@ -24,7 +24,7 @@ public class NodeManager : MonoBehaviour
         {
             for (int j = _mapSizeSO.BottomWorldBound; j <= _mapSizeSO.TopWorldBound; j++)
             {
-                _nodes[i,j] = _nodeGameObjects[i,j].GetComponent<Node>();
+                _nodes[i, j] = _nodeGameObjects[i, j].GetComponent<Node>();
 
             }
         }
@@ -36,7 +36,7 @@ public class NodeManager : MonoBehaviour
         {
             for (int j = _mapSizeSO.BottomWorldBound; j <= _mapSizeSO.TopWorldBound; j++)
             {
-                if (wallTilemap.GetTile(new Vector3Int(i,j,0)) != null)
+                if (wallTilemap.GetTile(new Vector3Int(i, j, 0)) != null)
                 {
                     _nodes[i, j].IsWall = true;
                 }
@@ -47,13 +47,15 @@ public class NodeManager : MonoBehaviour
     public void UpdateNodesfromTilemap(Tilemap wallTilemap, GameObject room)
     {
         BoundsInt bounds = wallTilemap.cellBounds;
+        Debug.Log(bounds);
         for (int i = bounds.x; i < bounds.xMax; i++)
         {
             for (int j = bounds.y; j < bounds.yMax; j++)
             {
                 if (wallTilemap.GetTile(new Vector3Int(i, j, 0)) != null)
                 {
-                    _nodes[i+(int)(room.transform.position.x), j+(int)(room.transform.position.y)].IsWall = true;
+                    Debug.Log(wallTilemap.GetTile(new Vector3Int(i, j, 0)));
+                    _nodes[i + (int)(room.transform.position.x), j + (int)(room.transform.position.y)].IsWall = true;
                 }
             }
         }

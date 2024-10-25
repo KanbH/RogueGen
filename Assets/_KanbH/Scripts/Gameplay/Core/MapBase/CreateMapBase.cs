@@ -49,7 +49,7 @@ public class CreateMapBase : MonoBehaviour
         {
             for (int j = _mapSizeSO.BottomWorldBound; j <= _mapSizeSO.TopWorldBound; j++)
             {
-                GameObject newNode = Instantiate(_nodeObject, new Vector3(i+0.5f, j+0.5f, 0), Quaternion.identity);
+                GameObject newNode = Instantiate(_nodeObject, new Vector3(i+0.5f, j+0.5f, 0), Quaternion.identity, _nodeManager.gameObject.transform);
 
                 _nodeObjects[i,j] = newNode;
             }

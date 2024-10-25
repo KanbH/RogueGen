@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     private PrototypeRoomGenerator _prototypeRoomGenerator;
     #endregion
 
-
     #region Awake
     void Awake()
     {

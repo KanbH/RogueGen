@@ -12,6 +12,7 @@ public class PrototypeRoomGenerator : MonoBehaviour
     
     [SerializeField] private CreateMapBase _createMapBase;
     [SerializeField] private NodeManager _nodeManager;
+    [SerializeField] private GameObject _mapHolderObject;
 
     [SerializeField] private MapSizeSO _mapSizeSO;
 
@@ -22,6 +23,7 @@ public class PrototypeRoomGenerator : MonoBehaviour
     {
         _createMapBase.InitMapBase();
         CenterGenerator();
+        GenerateDungeon();
     }
 
     private void CenterGenerator()
@@ -32,11 +34,6 @@ public class PrototypeRoomGenerator : MonoBehaviour
         this.gameObject.transform.position = pos;
     }
 
-    void Start()
-    {
-        GenerateDungeon();
-    }
-
     private void GenerateDungeon()
     {
         GenerateStartRoom();
@@ -45,10 +42,28 @@ public class PrototypeRoomGenerator : MonoBehaviour
 
     private void GenerateStartRoom()
     {
-        GameObject startRoom = Instantiate(_roomPrefabList[0], this.transform.position, Quaternion.identity);
+        GameObject startRoom = Instantiate(_roomPrefabList[0], this.transform.position, Quaternion.identity, _mapHolderObject.transform);
         Room room = startRoom.GetComponent<Room>();
         AddConnectionPoints(room.GetConnectionPoints());
         _roomList.Add(startRoom);
+        if (_nodeManager == null)
+        {
+            Debug.Log("nodemanager is null");
+        }
+        else
+        {
+            Debug.Log("nodemanager isn't null");
+        }
+
+        if ( room.WallTilemap != null )
+        {
+            Debug.Log("rwt isn't null");
+        }
+
+        if (startRoom != null)
+        {
+            Debug.Log("startroom isn't null");
+        }
         _nodeManager.UpdateNodesfromTilemap(room.WallTilemap, startRoom);
     }
 
@@ -123,7 +138,7 @@ public class PrototypeRoomGenerator : MonoBehaviour
 
             if (roomToSpawn.GetComponent<Room>().GetPointToConnect(originConnection.GetConnectionDirection()) != null)
             {
-                newRoom = Instantiate(roomToSpawn, this.transform.position, Quaternion.identity);
+                newRoom = Instantiate(roomToSpawn, this.transform.position, Quaternion.identity, _mapHolderObject.transform);
                 newConnection = newRoom.GetComponent<Room>().GetPointToConnect(originConnection.GetConnectionDirection());
             }
         }
