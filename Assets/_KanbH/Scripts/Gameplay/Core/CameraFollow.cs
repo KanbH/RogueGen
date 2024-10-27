@@ -8,6 +8,10 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private Vector3 _offset = new Vector3(0f, 0f, -10f);
     [SerializeField] private float _smoothSpeed = 0.125f;
 
+    private void Start()
+    {
+        transform.position = _followTarget.transform.position;
+    }
     void LateUpdate()
     {
         if (_followTarget != null)

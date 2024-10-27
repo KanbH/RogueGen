@@ -21,7 +21,6 @@ public class PrototypeRoomGenerator : MonoBehaviour
 
     public void StartMapGeneration()
     {
-        _createMapBase.InitMapBase();
         CenterGenerator();
         GenerateDungeon();
     }
@@ -29,8 +28,8 @@ public class PrototypeRoomGenerator : MonoBehaviour
     private void CenterGenerator()
     {
         Vector3 pos = this.gameObject.transform.position;
-        pos.x = ((_mapSizeSO.RightWorldBound + 1) / 2) + _mapSizeSO.LeftWorldBound;
-        pos.y = ((_mapSizeSO.TopWorldBound + 1) / 2) + _mapSizeSO.BottomWorldBound;
+        pos.x = Mathf.Round(((_mapSizeSO.RightWorldBound + 1) / 2) + _mapSizeSO.LeftWorldBound);
+        pos.y = Mathf.Round(((_mapSizeSO.TopWorldBound + 1) / 2) + _mapSizeSO.BottomWorldBound);
         this.gameObject.transform.position = pos;
     }
 

@@ -319,6 +319,28 @@ PrefabInstance:
       insertIndex: 1
       addedObject: {fileID: 476703937}
   m_SourcePrefab: {fileID: 100100000, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
+--- !u!114 &926072291 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3366306070865957122, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
+  m_PrefabInstance: {fileID: 4426061499136226397}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5fcbf353d425294aa2f92a6257b9f14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1145473431 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3985141845355091161, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
+  m_PrefabInstance: {fileID: 4426061499136226397}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c578a965ec293141b1dbd2f296a8294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2101704122
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,6 +422,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3366306070865957122, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
+      propertyPath: _baseFloorTile
+      value: 
+      objectReference: {fileID: 11400000, guid: e638765ba68595742b246ce73dd2efc1, type: 2}
     - target: {fileID: 3688841881033391047, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -408,6 +434,18 @@ PrefabInstance:
       propertyPath: _roomsToGenerate
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5575204089145023227, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
+      propertyPath: _nodeManager
+      value: 
+      objectReference: {fileID: 492495308}
+    - target: {fileID: 5575204089145023227, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
+      propertyPath: _createMapBase
+      value: 
+      objectReference: {fileID: 926072291}
+    - target: {fileID: 5575204089145023227, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
+      propertyPath: _prototypeRoomGenerator
+      value: 
+      objectReference: {fileID: 1145473431}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

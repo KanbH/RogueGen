@@ -1,49 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using NUnit.Framework;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
-
-    #region Core GameObjects
-    [SerializeField] private GameObject _mapBaseObject;
-    [SerializeField] private GameObject _nodeManagerObject;
-    [SerializeField] private GameObject _mapGeneratorObject;
-    #endregion
+    private static GameManager _instance;
 
     #region Components
-    private CreateMapBase _createMapBase;
-    private NodeManager _nodeManager;
-    private PrototypeRoomGenerator _prototypeRoomGenerator;
+    [SerializeField] private CreateMapBase _createMapBase;
+    [SerializeField] private NodeManager _nodeManager;
+    [SerializeField] private PrototypeRoomGenerator _prototypeRoomGenerator;
     #endregion
 
     #region Awake
     void Awake()
     {
-        if (instance == null)
+        if (_instance == null)
         {
-            instance = this;
+            _instance = this;
             DontDestroyOnLoad(gameObject);
-            GetMapComponents();
+            CheckComponentsNotNull();
         }
-        else
+        else if (_instance != null && _instance != this)
         {
             Destroy(gameObject);
         }
     }
 
-    private void GetMapComponents()
+    private void CheckComponentsNotNull()
     {
-        _createMapBase = _mapBaseObject.GetComponent<CreateMapBase>();
-        _nodeManager = _nodeManagerObject.GetComponent<NodeManager>();
-        _prototypeRoomGenerator = _mapGeneratorObject.GetComponent<PrototypeRoomGenerator>();
+        Assert.IsNotNull(_createMapBase);
+        Assert.IsNotNull(_nodeManager);
+        Assert.IsNotNull(_prototypeRoomGenerator);
     }
     #endregion
 
     #region Game Initialization
     void Start()
     {
+        _createMapBase.InitMapBase();
         _prototypeRoomGenerator.StartMapGeneration();
     }
     #endregion
