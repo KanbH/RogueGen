@@ -14,7 +14,7 @@ public class SightDetectPlayer : Leaf
 
     public TransformReference SelfTranform;
     public TransformReference PlayerTransform;
-    public float SightRange;
+    public FloatReference SightRange;
 
     public override void OnEnter()
     {
@@ -23,7 +23,7 @@ public class SightDetectPlayer : Leaf
 
     public override NodeResult Execute()
     {
-        _hitCount = Physics2D.Raycast(SelfTranform.Value.position, PlayerTransform.Value.position - SelfTranform.Value.position, _contactFilter, _rayHits, SightRange);
+        _hitCount = Physics2D.Raycast(SelfTranform.Value.position, PlayerTransform.Value.position - SelfTranform.Value.position, _contactFilter, _rayHits, SightRange.Value);
         Debug.DrawRay(SelfTranform.Value.position, PlayerTransform.Value.position - SelfTranform.Value.position, Color.green);
 
         
