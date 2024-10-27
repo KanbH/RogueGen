@@ -136,7 +136,7 @@ MonoBehaviour:
   swingSpeed: 400
   arcAngle: 180
   weaponRange: 1.5
-  knockbackMagnitude: 50
+  knockbackMagnitude: 40
 --- !u!58 &2639781834924748941
 CircleCollider2D:
   m_ObjectHideFlags: 0

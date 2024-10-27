@@ -423,6 +423,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3366306070865957122, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
+      propertyPath: _baseWallTile
+      value: 
+      objectReference: {fileID: 11400000, guid: c5a46c3fc7cd1944694df08eb3b9e1b0, type: 2}
+    - target: {fileID: 3366306070865957122, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
       propertyPath: _baseFloorTile
       value: 
       objectReference: {fileID: 11400000, guid: e638765ba68595742b246ce73dd2efc1, type: 2}
@@ -525,6 +529,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2101704123}
     m_Modifications:
     - target: {fileID: 174928990289031441, guid: 80a754b9fa135f7429303c1d4e32d3c5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7282886668606283007, guid: 5ef8d26767f78e8429be06d79c5e1601, type: 3}
+    - target: {fileID: 174928990289031441, guid: 80a754b9fa135f7429303c1d4e32d3c5, type: 3}
       propertyPath: m_SortingLayer
       value: 3
       objectReference: {fileID: 0}
@@ -534,7 +542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 395874667803911074, guid: 80a754b9fa135f7429303c1d4e32d3c5, type: 3}
       propertyPath: m_Name
-      value: Rat
+      value: Slime
       objectReference: {fileID: 0}
     - target: {fileID: 395874667803911074, guid: 80a754b9fa135f7429303c1d4e32d3c5, type: 3}
       propertyPath: m_TagString
