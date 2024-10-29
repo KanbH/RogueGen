@@ -68,7 +68,7 @@ public class MoveToDestination : MonoBehaviour
 
     public bool HavePath()
     {
-        return _path.Count == 0;
+        return _path.Count != 0;
     }
 
     public void SetIdle()
