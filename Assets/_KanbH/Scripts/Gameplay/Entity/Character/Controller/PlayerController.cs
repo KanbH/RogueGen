@@ -63,8 +63,8 @@ public class PlayerController : EntityController
         if (enemyController != null)
         {
             // Deal damage to the player
-            enemyController.TakeDamage(_characterStats.Strength);
-            Debug.Log("Player dealt damage to the enemy: " + _characterStats.Strength);
+            enemyController.TakeDamage(DamageCalculator.CalculateDamage(_characterStats, enemyController.GetCharacterStats()));
+            Debug.Log("Player dealt damage to the enemy!");
         }
     }
 
@@ -74,7 +74,7 @@ public class PlayerController : EntityController
         _characterStats.Health -= damage;
         Debug.Log($"Player took {damage} damage and have {_characterStats.Health} HP left");
 
-        if (_characterStats.IsDead)
+        if (_characterStats.HealthBelow0)
         {
             //blablabla resurection
             Die();
@@ -98,4 +98,8 @@ public class PlayerController : EntityController
         Debug.Log("Player has died");
     }
 
+    public override CharacterStats GetCharacterStats()
+    {
+        return _characterStats;
+    }
 }

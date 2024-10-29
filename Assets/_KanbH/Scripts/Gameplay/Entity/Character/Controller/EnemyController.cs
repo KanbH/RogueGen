@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class EnemyController : EntityController
 {
-    [SerializeField] private float attack = 15f;
     [SerializeField] private float contactKnockbackMagnitude = 1000f;
 
     private CharacterStats _characterStats;
@@ -17,12 +16,6 @@ public class EnemyController : EntityController
         _characterStats = GetComponent<CharacterStats>();
         _characterMovement = GetComponent<CharacterMovement>();
         _moveToDestination = GetComponent<MoveToDestination>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -38,7 +31,7 @@ public class EnemyController : EntityController
     {
         _characterStats.Health -= damage;
 
-        if (_characterStats.IsDead)
+        if (_characterStats.HealthBelow0)
         {
             Die();
         }
@@ -57,8 +50,8 @@ public class EnemyController : EntityController
         if (playerController != null)
         {
             // Deal damage to the player
-            playerController.TakeDamage(attack);
-            Debug.Log("Enemy dealt damage to the player: " + attack);
+            playerController.TakeDamage(DamageCalculator.CalculateDamage(_characterStats, playerController.GetCharacterStats()));
+            Debug.Log("Enemy dealt damage to the player!");
         }
     }
 
@@ -70,6 +63,11 @@ public class EnemyController : EntityController
         {
             entityMovement.ReceiveKnockback(knockbackDirection, magnitude);
         }
+    }
+
+    public override CharacterStats GetCharacterStats()
+    {
+        return _characterStats;
     }
 
 }

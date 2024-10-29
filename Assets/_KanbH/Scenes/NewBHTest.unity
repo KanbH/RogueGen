@@ -299,6 +299,14 @@ PrefabInstance:
       propertyPath: _weaponSwingCooldown
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 308559277936437745, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
+      propertyPath: _strength
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 308559277936437745, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
+      propertyPath: _toughness
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1953630939735346582, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
       propertyPath: m_SortingLayer
       value: 3
@@ -659,6 +667,14 @@ PrefabInstance:
     - target: {fileID: 6265897519842152119, guid: 80a754b9fa135f7429303c1d4e32d3c5, type: 3}
       propertyPath: selectedEditorNode
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729552589948541028, guid: 80a754b9fa135f7429303c1d4e32d3c5, type: 3}
+      propertyPath: _strength
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6729552589948541028, guid: 80a754b9fa135f7429303c1d4e32d3c5, type: 3}
+      propertyPath: _toughness
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

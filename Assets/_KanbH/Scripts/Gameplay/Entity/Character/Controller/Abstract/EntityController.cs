@@ -8,4 +8,5 @@ public abstract class EntityController : MonoBehaviour
     public abstract void TakeDamage(float damage);
     public abstract void DealKnockback(GameObject target, float magnitude);
     public abstract void Die();
+    public abstract CharacterStats GetCharacterStats();
 }

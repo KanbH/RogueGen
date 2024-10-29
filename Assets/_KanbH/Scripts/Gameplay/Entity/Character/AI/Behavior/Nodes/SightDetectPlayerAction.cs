@@ -33,11 +33,11 @@ public partial class SightDetectPlayerAction : Action
         {
             if (hit.collider.gameObject.HasTag("Player"))
             {
-                Debug.Log("Player detected!");
+                //Debug.Log("Player detected!");
                 return Status.Success;
             }
         }
-        Debug.Log("Player not detected...");
+        //Debug.Log("Player not detected...");
         return Status.Failure;
     }
 }

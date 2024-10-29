@@ -10,6 +10,11 @@ public class CharacterStats : MonoBehaviour
     [SerializeField] private float _toughness;
     [SerializeField] private float _agility;
 
+    private void Awake()
+    {
+        
+    }
+
     public float Health
     {
         get { return _health; }
@@ -46,8 +51,8 @@ public class CharacterStats : MonoBehaviour
         }
     }
 
-    public bool IsAlive => Health > 0;
-    public bool IsDead => !IsAlive;
+    public bool HealthAbove0 => Health > 0;
+    public bool HealthBelow0 => !HealthAbove0;
 
 
 }
