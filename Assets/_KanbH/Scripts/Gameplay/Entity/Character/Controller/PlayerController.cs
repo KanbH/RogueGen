@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NUnit.Framework;
 
 public class PlayerController : EntityController
 {
@@ -10,6 +11,7 @@ public class PlayerController : EntityController
 
     private PlayerMovement _playerMovement;
     private CharacterStats _characterStats;
+    private InventoryManager _inventoryManager;
 
     private float lastSwingTime = -Mathf.Infinity;
 
@@ -17,6 +19,11 @@ public class PlayerController : EntityController
     {
         _playerMovement = GetComponent<PlayerMovement>();
         _characterStats = GetComponent<CharacterStats>();
+        _inventoryManager = GetComponent<InventoryManager>();
+
+        Assert.IsNotNull(_playerMovement);
+        Assert.IsNotNull(_characterStats);
+        Assert.IsNotNull(_inventoryManager);
     }
 
     // Update is called once per frame
