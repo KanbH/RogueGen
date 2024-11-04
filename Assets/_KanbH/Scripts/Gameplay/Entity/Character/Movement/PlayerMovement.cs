@@ -37,7 +37,8 @@ public class PlayerMovement : EntityMovement
         UpdateMovementSpeed();
         // Apply force-based movement
         //Debug.Log("Player's movespeed is " + _movementSpeed);
-        _rigidbody2d.AddForce(_movement.normalized * _movementSpeed * Time.fixedDeltaTime);
+        _rigidbody2d.AddForce(_movement.normalized * _movementSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
+
     }
 
     protected override void UpdateMovementSpeed()

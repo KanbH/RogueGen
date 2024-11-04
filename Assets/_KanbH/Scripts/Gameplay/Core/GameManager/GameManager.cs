@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     {
         _createMapBase.InitMapBase();
         _prototypeRoomGenerator.StartMapGeneration();
+        _nodeManager.DestroyAllNodeGameObjects();
     }
     #endregion
 

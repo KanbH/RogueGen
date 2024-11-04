@@ -113,8 +113,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -597644747
-  m_SortingLayer: 1
+  m_SortingLayerID: 1098804831
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -221,8 +221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5fcbf353d425294aa2f92a6257b9f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _baseFloorTile: {fileID: 11400000, guid: 7cbba1effc2860445ab809e20048ee1b, type: 2}
-  _baseWallTile: {fileID: 11400000, guid: bf35f7705250b63428d41d3bcf859ba7, type: 2}
+  _baseFloorTile: {fileID: 11400000, guid: 4a10d085d659bd44f87deeacfc26c6ae, type: 2}
+  _baseWallTile: {fileID: 11400000, guid: c5a46c3fc7cd1944694df08eb3b9e1b0, type: 2}
   _nodeObject: {fileID: 6918464171897942488, guid: b9518c5e7706c414baa64391ecd1aa28, type: 3}
   _nodeManager: {fileID: 0}
   _baseFloorTilemap: {fileID: 1826123221989026047}
@@ -340,8 +340,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -597644747
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}

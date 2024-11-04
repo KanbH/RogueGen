@@ -200,6 +200,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1325750222948271416, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4858112471315456660, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
       propertyPath: managedReferences[778803439576023497].m_Value
       value: 
@@ -266,10 +270,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 870202415495964958, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2745572968517556819, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -322,17 +322,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 3688841881033391047, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3985141845355091161, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
       propertyPath: _roomsToGenerate
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137480390487984472, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5575204089145023227, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
       propertyPath: _nodeManager
@@ -346,10 +338,6 @@ PrefabInstance:
       propertyPath: _prototypeRoomGenerator
       value: 
       objectReference: {fileID: 746458326}
-    - target: {fileID: 7383557695396971899, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8659357949617032050, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
       propertyPath: m_SortingLayer
       value: 0
@@ -409,10 +397,6 @@ PrefabInstance:
       value: Main Camera
       objectReference: {fileID: 0}
     - target: {fileID: 942581431788153994, guid: 6b1f11eb995ec314b9adc7d8ee6186c1, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1405974815}
-    - target: {fileID: 942581431788153994, guid: 6b1f11eb995ec314b9adc7d8ee6186c1, type: 3}
       propertyPath: _followTarget
       value: 
       objectReference: {fileID: 1405974815}
@@ -469,6 +453,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1662819936}
     m_Modifications:
+    - target: {fileID: 1316047947251723259, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296004181175068855, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
+      propertyPath: EquippedWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: a9f81574da47895478a48c350d672f12, type: 2}
+    - target: {fileID: 6596528658574720012, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596528658574720012, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
+      propertyPath: m_LinearDamping
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 6905014320686261617, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
       propertyPath: m_Name
       value: Player
@@ -476,6 +476,22 @@ PrefabInstance:
     - target: {fileID: 6905014320686261617, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7275299992415767354, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
+      propertyPath: SlideMovement.<gravity>k__BackingField.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7275299992415767354, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
+      propertyPath: SlideMovement.<surfaceAnchor>k__BackingField.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7275299992415767354, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
+      propertyPath: SlideMovement.<layerMask>k__BackingField.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7275299992415767354, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
+      propertyPath: SlideMovement.<useSimulationMove>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7535125884493346342, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
       propertyPath: m_LocalPosition.x

@@ -8,12 +8,12 @@ using Input = UnityEngine.Input;
 
 public class WeaponController : MonoBehaviour
 {
-    public float swingSpeed = 360f; // degrees per second
-    public float arcAngle = 90f;    // total arc angle (swing width)
+    public float swingSpeed = 400f; // degrees per second
+    public float arcAngle = 180f;    // total arc angle (swing width)
     public float weaponRange = 1.5f; // distance from player
     private float currentAngle = 0f;
     private float startingAngle = 0f;
-    [SerializeField] private float knockbackMagnitude = 200f;
+    [SerializeField] private float knockbackMagnitude = 40f;
     private Vector3 startPosition;
 
     private bool isSwinging = false;

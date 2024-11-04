@@ -5,15 +5,9 @@ using NUnit.Framework;
 
 public class PlayerController : EntityController
 {
-    [SerializeField] public GameObject weaponPrefab;
-
-    [SerializeField] private float _weaponSwingCooldown;
-
     private PlayerMovement _playerMovement;
     private CharacterStats _characterStats;
     private InventoryManager _inventoryManager;
-
-    private float lastSwingTime = -Mathf.Infinity;
 
     void Awake()
     {
@@ -30,28 +24,25 @@ public class PlayerController : EntityController
     void Update()
     {
         // Check if the cooldown has passed before allowing a swing
-        if (Time.time >= lastSwingTime + _weaponSwingCooldown)
+        //if (Time.time >= lastSwingTime + _weaponSwingCooldown)
         {
             // Check for input to swing (you can replace this with a more complex input system later)
-            DetectSwingInput();
+            DetectAttackInput();
         }
     }
 
-    void DetectSwingInput()
+    private void DetectAttackInput()
     {
         // Detect left mouse button press
         if (Input.GetMouseButtonDown(0)) // Left mouse button or any attack key
         {
-            Vector2 swingDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+            Vector2 AttackDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
 
-            // Update the time of the last swing to the current time
-            lastSwingTime = Time.time;
-
-            // Spawn and swing the weapon
-            SwingWeapon(swingDirection);
+            // Attempted to use weapon
+            _inventoryManager.AttemptToUseWeapon(AttackDirection);
         }
     }
-
+    /*
     void SwingWeapon(Vector2 swingDirection)
     {
         // Instantiate the weapon prefab
@@ -61,6 +52,7 @@ public class PlayerController : EntityController
         WeaponController weaponController = weaponInstance.GetComponent<WeaponController>();
         weaponController.StartSwing(swingDirection);
     }
+    */
 
     public override void DealDamage(GameObject target)
     {

@@ -60,6 +60,14 @@ public class NodeManager : MonoBehaviour
         }
     }
 
+    public void DestroyAllNodeGameObjects()
+    {
+        foreach (GameObject nodeGameObject in _nodeGameObjects)
+        {
+            Destroy(nodeGameObject);
+        }
+    }
+
     public Node[,] GetNodes() { return _nodes; }
 
     public void SetMapSizeSO(MapSizeSO mapSizeSO)

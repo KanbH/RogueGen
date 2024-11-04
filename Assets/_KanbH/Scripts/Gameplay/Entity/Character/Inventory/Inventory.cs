@@ -35,6 +35,18 @@ public class Inventory : MonoBehaviour
         return InventoryItems[0];
     }
 
+    public Weapon FindFirstWeapon()
+    {
+        foreach (Item item in InventoryItems)
+        {
+            if (item is Weapon weapon)
+            {
+                return weapon;
+            }
+        }
+        return null;
+    }
+
     public void RemoveAndDropItem(Item item)
     {
         RemoveItem(item);
