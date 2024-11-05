@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SpriteController : MonoBehaviour
+public class SpriteSwitcher : MonoBehaviour
 {
     [SerializeField] private Sprite NorthDirectionSprite;
     [SerializeField] private Sprite SouthDirectionSprite;

@@ -10,11 +10,6 @@ public class CharacterStats : MonoBehaviour
     [SerializeField] private float _toughness;
     [SerializeField] private float _agility;
 
-    private void Awake()
-    {
-        
-    }
-
     public float Health
     {
         get { return _health; }
@@ -29,7 +24,7 @@ public class CharacterStats : MonoBehaviour
         get { return _strength; }
         private set
         {
-            _strength = Mathf.Max(0, value);  // Ensure health never drops below 0
+            _strength = value;
         }
     }
 
@@ -38,7 +33,7 @@ public class CharacterStats : MonoBehaviour
         get { return _toughness; }
         private set
         {
-            _toughness = Mathf.Max(0, value);  // Ensure health never drops below 0
+            _toughness = value;
         }
     }
 
@@ -47,7 +42,7 @@ public class CharacterStats : MonoBehaviour
         get { return _agility; }
         private set
         {
-            _agility = Mathf.Max(0, value);  // Ensure health never drops below 0
+            _agility = value;
         }
     }
 
