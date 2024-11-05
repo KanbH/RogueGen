@@ -18,9 +18,16 @@ public class WeaponController : MonoBehaviour
 
     private bool isSwinging = false;
 
+    public void UseWeapon(Vector2 attackDirection)
+    {
+        if (isSwinging == false)
+        {
+            StartSwing(attackDirection);
+        }
+    }
     public void StartSwing(Vector2 swingDirection)
     {
-        startingAngle = (Mathf.Atan2(swingDirection.y, swingDirection.x) * Mathf.Rad2Deg - arcAngle/2);
+        startingAngle = (Mathf.Atan2(swingDirection.y, swingDirection.x) * Mathf.Rad2Deg - arcAngle / 2);
         // Calculate the starting angle based on the direction (e.g., mouse position)
         currentAngle = startingAngle;
         // Reset weapon's local rotation
@@ -37,13 +44,13 @@ public class WeaponController : MonoBehaviour
             float rotationStep = swingSpeed * Time.deltaTime;
             currentAngle += rotationStep;
             transform.localRotation = Quaternion.Euler(0, 0, currentAngle);
-            
+
             // Stop the swing once it completes the full arc
-            if (currentAngle >= startingAngle+arcAngle)
+            if (currentAngle >= startingAngle + arcAngle)
             {
                 EndSwing();
             }
-            
+
         }
     }
 
@@ -51,7 +58,7 @@ public class WeaponController : MonoBehaviour
     {
         isSwinging = false;
         // Optionally, destroy the weapon object here or make it inactive
-        Destroy(gameObject);
+        this.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(UnityEngine.Collider2D collision)

@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 2760750469479349072}
   - component: {fileID: 2639781834924748941}
   m_Layer: 0
-  m_Name: Weapon
+  m_Name: WeaponPrefab_Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

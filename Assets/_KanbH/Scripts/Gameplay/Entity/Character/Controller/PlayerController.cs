@@ -8,16 +8,19 @@ public class PlayerController : EntityController
     private PlayerMovement _playerMovement;
     private CharacterStats _characterStats;
     private InventoryManager _inventoryManager;
+    private EquipmentHandler _equipmentHandler;
 
     void Awake()
     {
         _playerMovement = GetComponent<PlayerMovement>();
         _characterStats = GetComponent<CharacterStats>();
         _inventoryManager = GetComponent<InventoryManager>();
+        _equipmentHandler = GetComponent<EquipmentHandler>();
 
         Assert.IsNotNull(_playerMovement);
         Assert.IsNotNull(_characterStats);
         Assert.IsNotNull(_inventoryManager);
+        Assert.IsNotNull(_equipmentHandler);
     }
 
     // Update is called once per frame
@@ -39,7 +42,7 @@ public class PlayerController : EntityController
             Vector2 AttackDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
 
             // Attempted to use weapon
-            _inventoryManager.AttemptToUseWeapon(AttackDirection);
+            _equipmentHandler.PerformAttack(AttackDirection);
         }
     }
     /*
