@@ -3,10 +3,11 @@ using UnityEngine;
 public class WeaponBowController : WeaponController
 {
     [SerializeField] private GameObject ArrowPrefab;
+    [SerializeField] private float _arrowSpeed;
 
     public override void UseWeapon(Vector2 attackDirection)
     {
-        
+        ShootArrow(attackDirection);
     }
 
     private void Update()
@@ -14,8 +15,12 @@ public class WeaponBowController : WeaponController
         AimBow();
     }
 
-    private void ShootArrow(Vector2 shootDirection, GameObject arrowPrefab)
+    private void ShootArrow(Vector2 shootDirection)
     {
+        GameObject arrow = Instantiate(ArrowPrefab, this.gameObject.transform.position, Quaternion.identity);
+        ProjectileArrow projectileArrow = arrow.GetComponent<ProjectileArrow>();
+        EntityController entityController = GetComponentInParent<EntityController>();
+        projectileArrow.InitializeArrow(shootDirection, _arrowSpeed, entityController);
 
     }
 
