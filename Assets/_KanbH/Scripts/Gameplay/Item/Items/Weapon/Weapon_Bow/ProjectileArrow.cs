@@ -13,7 +13,7 @@ public class ProjectileArrow : MonoBehaviour
     public void InitializeArrow(Vector3 direction, float speed, EntityController entityController)
     {
         _speed = speed;
-        _direction = direction;
+        _direction = direction.normalized;
         _entityController = entityController;
         SetRotation(_direction);
         initialized = true;

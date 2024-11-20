@@ -1,0 +1,627 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8783782255632747765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c02bb70996b49eba31d0c206e28da24, type: 3}
+  m_Name: Slime Blackboard Editor
+  m_EditorClassIdentifier: 
+  VersionTimestamp: 638677473916062548
+  AssetID:
+    m_Value0: 10720820397914462591
+    m_Value1: 12643256038565956474
+  m_Blackboard:
+    m_Variables:
+    - rid: 4633742684282946380
+    - rid: 4633742684282946381
+    - rid: 4633742684282946382
+    - rid: 4633742684282946383
+  m_SharedBlackboardVariableGuids: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 4633742684282946380
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 1
+          m_Value1: 0
+        Name: Self
+        m_Value: {fileID: 0}
+    - rid: 4633742684282946381
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 16291638138405259594
+          m_Value1: 6173224197062170118
+        Name: Player
+        m_Value: {fileID: 0}
+    - rid: 4633742684282946382
+      type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 8226653575602717242
+          m_Value1: 3371810830066189693
+        Name: SightRange
+        m_Value: 7
+    - rid: 4633742684282946383
+      type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 17574787157005671829
+          m_Value1: 34741804247589733
+        Name: JumpRange
+        m_Value: 2
+--- !u!114 &-597894055176659160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b27bb6d9a2c8d540a10dff10acc543e, type: 3}
+  m_Name: Slime Debug Info
+  m_EditorClassIdentifier: 
+  m_CodeBreakPointsList: []
+--- !u!114 &-263106105092446433
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dd922ae02c94c87a66e46a10a7319b9, type: 3}
+  m_Name: Slime Blackboard Editor
+  m_EditorClassIdentifier: 
+  AssetID:
+    m_Value0: 10720820397914462591
+    m_Value1: 12643256038565956474
+  m_Variables:
+  - rid: 4633742684282945960
+  - rid: 4633742684282946024
+  - rid: 4633742684282946025
+  - rid: 4633742684282946026
+  m_VersionTimestamp: 638677473916062548
+  m_CommandBuffer:
+    m_Commands: []
+  m_RuntimeBlackboardAsset: {fileID: -8783782255632747765}
+  references:
+    version: 2
+    RefIds:
+    - rid: 4633742684282945960
+      type: {class: 'TypedVariableModel`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        ID:
+          m_Value0: 1
+          m_Value1: 0
+        Name: Self
+        IsExposed: 1
+        m_IsShared: 0
+        m_Value: {fileID: 0}
+    - rid: 4633742684282946024
+      type: {class: 'TypedVariableModel`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        ID:
+          m_Value0: 16291638138405259594
+          m_Value1: 6173224197062170118
+        Name: Player
+        IsExposed: 1
+        m_IsShared: 0
+        m_Value: {fileID: 0}
+    - rid: 4633742684282946025
+      type: {class: 'TypedVariableModel`1[[System.Single, mscorlib]]', ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        ID:
+          m_Value0: 8226653575602717242
+          m_Value1: 3371810830066189693
+        Name: SightRange
+        IsExposed: 1
+        m_IsShared: 0
+        m_Value: 7
+    - rid: 4633742684282946026
+      type: {class: 'TypedVariableModel`1[[System.Single, mscorlib]]', ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        ID:
+          m_Value0: 17574787157005671829
+          m_Value1: 34741804247589733
+        Name: JumpRange
+        IsExposed: 1
+        m_IsShared: 0
+        m_Value: 2
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad8f2220607dac4db5082ff333fafb8, type: 3}
+  m_Name: Slime
+  m_EditorClassIdentifier: 
+  Blackboard: {fileID: -263106105092446433}
+  m_Description: 
+  m_Nodes:
+  - rid: 4633742684282945961
+  - rid: 4633742684282945963
+  - rid: 4633742684282946304
+  m_VersionTimestamp: 638677473915112543
+  m_DebugInfo: {fileID: -597894055176659160}
+  AssetID:
+    m_Value0: 10720820397914462591
+    m_Value1: 12643256038565956474
+  Story:
+    Story: 
+    StoryVariableNames: []
+    Variables: []
+  m_NodeModelsInfo:
+  - Name: On Start
+    Story: 
+    RuntimeTypeID:
+      m_Value0: 3335272451348827663
+      m_Value1: 11549843281177505721
+    Variables: []
+    NamedChildren: []
+  - Name: SightDetectPlayer
+    Story: '[Agent] detects [Player] within [SightRange]'
+    RuntimeTypeID:
+      m_Value0: 15266864322382198487
+      m_Value1: 12808942135403942921
+    Variables:
+    - Name: Agent
+      Type:
+        m_SerializableType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      Tooltip: 
+    - Name: Player
+      Type:
+        m_SerializableType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      Tooltip: 
+    - Name: SightRange
+      Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      Tooltip: 
+    NamedChildren: []
+  - Name: ChaseUntilRange
+    Story: 'Agent chases [Target] until distance is less than [Range]'
+    RuntimeTypeID:
+      m_Value0: 14610323749955549087
+      m_Value1: 7717791181333689991
+    Variables:
+    - Name: Target
+      Type:
+        m_SerializableType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      Tooltip: 
+    - Name: Range
+      Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      Tooltip: 
+    - Name: Player
+      Type:
+        m_SerializableType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      Tooltip: 
+    NamedChildren: []
+  m_Blackboards: []
+  m_CommandBuffer:
+    m_Commands: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 4633742684282945961
+      type: {class: StartNodeModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
+      data:
+        Position: {x: 0, y: 0}
+        ID:
+          m_Value0: 1144314995579813418
+          m_Value1: 5565449494670771804
+        Parents: []
+        PortModels:
+        - rid: 4633742684282945962
+        NodeType:
+          m_SerializableType: Unity.Behavior.Start, Unity.Behavior, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        NodeTypeID:
+          m_Value0: 3335272451348827663
+          m_Value1: 11549843281177505721
+        m_FieldValues: []
+        Repeat: 1
+    - rid: 4633742684282945962
+      type: {class: PortModel, ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        m_Name: OutputPort
+        m_PortDataFlowType: 1
+        m_IsFloating: 0
+        m_NodeModel:
+          rid: 4633742684282945961
+        m_Connections:
+        - rid: 4633742684282945964
+    - rid: 4633742684282945963
+      type: {class: ActionNodeModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
+      data:
+        Position: {x: 0, y: 104}
+        ID:
+          m_Value0: 9721521358524674454
+          m_Value1: 17424042941182598819
+        Parents: []
+        PortModels:
+        - rid: 4633742684282945964
+        - rid: 4633742684282945965
+        NodeType:
+          m_SerializableType: SightDetectPlayerAction, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        NodeTypeID:
+          m_Value0: 15266864322382198487
+          m_Value1: 12808942135403942921
+        m_FieldValues:
+        - rid: 4633742684282945966
+        - rid: 4633742684282945967
+        - rid: 4633742684282945968
+    - rid: 4633742684282945964
+      type: {class: PortModel, ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        m_Name: InputPort
+        m_PortDataFlowType: 0
+        m_IsFloating: 0
+        m_NodeModel:
+          rid: 4633742684282945963
+        m_Connections:
+        - rid: 4633742684282945962
+    - rid: 4633742684282945965
+      type: {class: PortModel, ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        m_Name: OutputPort
+        m_PortDataFlowType: 1
+        m_IsFloating: 0
+        m_NodeModel:
+          rid: 4633742684282945963
+        m_Connections:
+        - rid: 4633742684282946305
+    - rid: 4633742684282945966
+      type: {class: BehaviorGraphNodeModel/FieldModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
+      data:
+        FieldName: Agent
+        Type:
+          m_SerializableType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        LocalValue:
+          rid: 4633742684282945969
+        LinkedVariable:
+          rid: 4633742684282946375
+    - rid: 4633742684282945967
+      type: {class: BehaviorGraphNodeModel/FieldModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
+      data:
+        FieldName: Player
+        Type:
+          m_SerializableType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        LocalValue:
+          rid: 4633742684282945970
+        LinkedVariable:
+          rid: 4633742684282946376
+    - rid: 4633742684282945968
+      type: {class: BehaviorGraphNodeModel/FieldModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
+      data:
+        FieldName: SightRange
+        Type:
+          m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        LocalValue:
+          rid: 4633742684282945971
+        LinkedVariable:
+          rid: 4633742684282946377
+    - rid: 4633742684282945969
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 0
+          m_Value1: 0
+        Name: 
+        m_Value: {fileID: 0}
+    - rid: 4633742684282945970
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 0
+          m_Value1: 0
+        Name: 
+        m_Value: {fileID: 0}
+    - rid: 4633742684282945971
+      type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 0
+          m_Value1: 0
+        Name: 
+        m_Value: 0
+    - rid: 4633742684282946304
+      type: {class: ActionNodeModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
+      data:
+        Position: {x: 0, y: 192.66666}
+        ID:
+          m_Value0: 14853295325881686161
+          m_Value1: 7076389108828604097
+        Parents: []
+        PortModels:
+        - rid: 4633742684282946305
+        - rid: 4633742684282946306
+        NodeType:
+          m_SerializableType: ChaseUntilRangeAction, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        NodeTypeID:
+          m_Value0: 14610323749955549087
+          m_Value1: 7717791181333689991
+        m_FieldValues:
+        - rid: 4633742684282946374
+        - rid: 4633742684282946308
+        - rid: 4633742684282946307
+    - rid: 4633742684282946305
+      type: {class: PortModel, ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        m_Name: InputPort
+        m_PortDataFlowType: 0
+        m_IsFloating: 0
+        m_NodeModel:
+          rid: 4633742684282946304
+        m_Connections:
+        - rid: 4633742684282945965
+    - rid: 4633742684282946306
+      type: {class: PortModel, ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        m_Name: OutputPort
+        m_PortDataFlowType: 1
+        m_IsFloating: 0
+        m_NodeModel:
+          rid: 4633742684282946304
+        m_Connections: []
+    - rid: 4633742684282946307
+      type: {class: BehaviorGraphNodeModel/FieldModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
+      data:
+        FieldName: Player
+        Type:
+          m_SerializableType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        LocalValue:
+          rid: 4633742684282946309
+        LinkedVariable:
+          rid: 4633742684282946376
+    - rid: 4633742684282946308
+      type: {class: BehaviorGraphNodeModel/FieldModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
+      data:
+        FieldName: Range
+        Type:
+          m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        LocalValue:
+          rid: 4633742684282946310
+        LinkedVariable:
+          rid: 4633742684282946379
+    - rid: 4633742684282946309
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 0
+          m_Value1: 0
+        Name: 
+        m_Value: {fileID: 0}
+    - rid: 4633742684282946310
+      type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 0
+          m_Value1: 0
+        Name: 
+        m_Value: 0
+    - rid: 4633742684282946374
+      type: {class: BehaviorGraphNodeModel/FieldModel, ns: Unity.Behavior, asm: Unity.Behavior.Authoring}
+      data:
+        FieldName: Target
+        Type:
+          m_SerializableType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        LocalValue:
+          rid: 4633742684282946378
+        LinkedVariable:
+          rid: 4633742684282946376
+    - rid: 4633742684282946375
+      type: {class: 'TypedVariableModel`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        ID:
+          m_Value0: 1
+          m_Value1: 0
+        Name: Self
+        IsExposed: 1
+        m_IsShared: 0
+        m_Value: {fileID: 0}
+    - rid: 4633742684282946376
+      type: {class: 'TypedVariableModel`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        ID:
+          m_Value0: 16291638138405259594
+          m_Value1: 6173224197062170118
+        Name: Player
+        IsExposed: 1
+        m_IsShared: 0
+        m_Value: {fileID: 0}
+    - rid: 4633742684282946377
+      type: {class: 'TypedVariableModel`1[[System.Single, mscorlib]]', ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        ID:
+          m_Value0: 8226653575602717242
+          m_Value1: 3371810830066189693
+        Name: SightRange
+        IsExposed: 1
+        m_IsShared: 0
+        m_Value: 7
+    - rid: 4633742684282946378
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 0
+          m_Value1: 0
+        Name: 
+        m_Value: {fileID: 0}
+    - rid: 4633742684282946379
+      type: {class: 'TypedVariableModel`1[[System.Single, mscorlib]]', ns: Unity.Behavior.GraphFramework, asm: Unity.Behavior.GraphFramework}
+      data:
+        ID:
+          m_Value0: 17574787157005671829
+          m_Value1: 34741804247589733
+        Name: JumpRange
+        IsExposed: 1
+        m_IsShared: 0
+        m_Value: 2
+--- !u!114 &4422378321672999315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db920e62f70f420bb33c771449926fa4, type: 3}
+  m_Name: Slime
+  m_EditorClassIdentifier: 
+  Graphs:
+  - rid: 4633742684282946406
+  RootGraph:
+    rid: 4633742684282946406
+  m_DebugInfo: {fileID: -597894055176659160}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 4633742684282946406
+      type: {class: BehaviorGraphModule, ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        AuthoringAssetID:
+          m_Value0: 10720820397914462591
+          m_Value1: 12643256038565956474
+        m_DebugInfo: {fileID: 0}
+        Root:
+          rid: 4633742684282946407
+        BlackboardReference:
+          rid: 4633742684282946408
+        BlackboardGroupReferences: []
+        m_VersionTimestamp: 638677473915112543
+    - rid: 4633742684282946407
+      type: {class: Start, ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        ID:
+          m_Value0: 1144314995579813418
+          m_Value1: 5565449494670771804
+        Graph:
+          rid: 4633742684282946406
+        m_Parent:
+          rid: -2
+        m_Child:
+          rid: 4633742684282946409
+        Repeat: 1
+    - rid: 4633742684282946408
+      type: {class: BlackboardReference, ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        m_Blackboard:
+          rid: 4633742684282946410
+        m_Source: {fileID: -8783782255632747765}
+    - rid: 4633742684282946409
+      type: {class: SequenceComposite, ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        ID:
+          m_Value0: 9721521358524674454
+          m_Value1: 17424042941182598819
+        Graph:
+          rid: 4633742684282946406
+        m_Parent:
+          rid: 4633742684282946407
+        m_Children:
+        - rid: 4633742684282946411
+        - rid: 4633742684282946412
+    - rid: 4633742684282946410
+      type: {class: Blackboard, ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        m_Variables:
+        - rid: 4633742684282946413
+        - rid: 4633742684282946414
+        - rid: 4633742684282946415
+        - rid: 4633742684282946416
+    - rid: 4633742684282946411
+      type: {class: SightDetectPlayerAction, ns: , asm: Assembly-CSharp}
+      data:
+        ID:
+          m_Value0: 9721521358524674454
+          m_Value1: 17424042941182598819
+        Graph:
+          rid: 4633742684282946406
+        m_Parent:
+          rid: 4633742684282946409
+        Agent:
+          rid: 4633742684282946413
+        Player:
+          rid: 4633742684282946414
+        SightRange:
+          rid: 4633742684282946415
+    - rid: 4633742684282946412
+      type: {class: ChaseUntilRangeAction, ns: , asm: Assembly-CSharp}
+      data:
+        ID:
+          m_Value0: 14853295325881686161
+          m_Value1: 7076389108828604097
+        Graph:
+          rid: 4633742684282946406
+        m_Parent:
+          rid: 4633742684282946409
+        Target:
+          rid: 4633742684282946414
+        Range:
+          rid: 4633742684282946416
+        Player:
+          rid: 4633742684282946414
+    - rid: 4633742684282946413
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 1
+          m_Value1: 0
+        Name: Self
+        m_Value: {fileID: 0}
+    - rid: 4633742684282946414
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 16291638138405259594
+          m_Value1: 6173224197062170118
+        Name: Player
+        m_Value: {fileID: 0}
+    - rid: 4633742684282946415
+      type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 8226653575602717242
+          m_Value1: 3371810830066189693
+        Name: SightRange
+        m_Value: 7
+    - rid: 4633742684282946416
+      type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 17574787157005671829
+          m_Value1: 34741804247589733
+        Name: JumpRange
+        m_Value: 2

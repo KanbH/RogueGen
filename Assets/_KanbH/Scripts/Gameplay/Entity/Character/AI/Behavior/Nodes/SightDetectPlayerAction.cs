@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using CharlieMadeAThing.NeatoTags.Core;
 
 [Serializable, GeneratePropertyBag]
-[NodeDescription(name: "SightDetectPlayer", story: "[Agent] detects [Player] within [SightRange]", category: "Action", id: "d7f6acc136ccded3091449e90181c2b1")]
+[NodeDescription(name: "SightDetectPlayer", story: "[Agent] detects [Player] within [SightRange]", category: "_KanbH", id: "d7f6acc136ccded3091449e90181c2b1")]
 public partial class SightDetectPlayerAction : Action
 {
     [SerializeReference] public BlackboardVariable<GameObject> Agent;

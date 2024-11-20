@@ -23,11 +23,8 @@ public class PlayerController : EntityController
         Assert.IsNotNull(_equipmentHandler);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Check if the cooldown has passed before allowing a swing
-        //if (Time.time >= lastSwingTime + _weaponSwingCooldown)
         {
             // Check for input to swing (you can replace this with a more complex input system later)
             DetectAttackInput();
@@ -45,17 +42,6 @@ public class PlayerController : EntityController
             _equipmentHandler.PerformAttack(AttackDirection);
         }
     }
-    /*
-    void SwingWeapon(Vector2 swingDirection)
-    {
-        // Instantiate the weapon prefab
-        GameObject weaponInstance = Instantiate(weaponPrefab, this.transform);
-
-        // Get the WeaponController script and start the swing
-        WeaponController weaponController = weaponInstance.GetComponent<WeaponController>();
-        weaponController.StartSwing(swingDirection);
-    }
-    */
 
     public override void DealDamage(GameObject target)
     {

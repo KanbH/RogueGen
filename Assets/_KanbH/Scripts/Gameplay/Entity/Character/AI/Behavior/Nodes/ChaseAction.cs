@@ -30,18 +30,18 @@ public partial class ChaseAction : Action
         {
             if (_moveToDestination.IsOnTheWay())
             {
-                //Debug.Log("Agent on the way");
+                Debug.Log("Agent on the way");
                 return Status.Running;
             }
             else
             {
-                //Debug.Log("Agent reached player!");
+                Debug.Log("Agent reached player!");
                 return Status.Success;
             }
         }
         else
         {
-            //Debug.Log("Agent can't find path to reach player...");
+            Debug.Log("Agent can't find path to reach player...");
             return Status.Failure;
         }
     }

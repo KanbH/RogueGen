@@ -1,21 +1,27 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CharacterStats : MonoBehaviour
 {
+    [SerializeField] private float _maxHealth;
     [SerializeField] private float _health;
     [SerializeField] private float _strength;
     [SerializeField] private float _toughness;
     [SerializeField] private float _agility;
+
+    // Event to notify listeners about health changes
+    public UnityEvent<float> OnHealthChanged = new UnityEvent<float>();
+
+    public float MaxHealth => _maxHealth;
 
     public float Health
     {
         get { return _health; }
         set
         {
-            _health = Mathf.Max(0, value);  // Ensure health never drops below 0
+            Debug.Log("health changed");
+            _health = Mathf.Clamp(value, 0, _maxHealth);
+            OnHealthChanged.Invoke(_health / _maxHealth);
         }
     }
 
@@ -48,6 +54,5 @@ public class CharacterStats : MonoBehaviour
 
     public bool HealthAbove0 => Health > 0;
     public bool HealthBelow0 => !HealthAbove0;
-
 
 }

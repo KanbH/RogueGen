@@ -14,7 +14,7 @@ public class MoveToDestination : MonoBehaviour
     {
         _characterMovement = GetComponent<CharacterMovement>();
         _pathfinding = GetComponent<AStarPathfinding>();
-        
+
         _path = new List<Node>();
         _currentWaypointIndex = 0;
     }
@@ -28,7 +28,7 @@ public class MoveToDestination : MonoBehaviour
     {
         _targetPosition = targetPosition;
 
-        _path = _pathfinding.FindPath(this.transform.position, _targetPosition);
+        _path = _pathfinding.FindPath(transform.position, _targetPosition);
         _currentWaypointIndex = 0;
     }
 
@@ -50,15 +50,20 @@ public class MoveToDestination : MonoBehaviour
                 _currentWaypointIndex++;
             }
         }
-        else if ( _currentWaypointIndex >= _path.Count)
+        else if (_currentWaypointIndex >= _path.Count)
         {
             _characterMovement.SetMovementDirection(Vector2.zero);
         }
-        else 
+        else
         {
-            _characterMovement.SetMovementDirection(Vector2.zero);
-            _path.Clear();
+            ClearMovementTarget();
         }
+    }
+
+    public void ClearMovementTarget()
+    {
+        _characterMovement.SetMovementDirection(Vector2.zero);
+        _path.Clear();
     }
 
     public bool IsOnTheWay()
@@ -69,11 +74,5 @@ public class MoveToDestination : MonoBehaviour
     public bool HavePath()
     {
         return _path.Count != 0;
-    }
-
-    public void SetIdle()
-    {
-        _path.Clear();
-        _characterMovement.SetMovementDirection(Vector2.zero);
     }
 }
