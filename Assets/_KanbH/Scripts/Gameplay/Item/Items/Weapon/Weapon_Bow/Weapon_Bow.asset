@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b61ea478e6c2d4248a8f7c3e12dd03b5, type: 3}
-  m_Name: Weapon_Melee_Bat
+  m_Name: Weapon_Bow
   m_EditorClassIdentifier: 
-  ItemName: Bat
-  Description: A bat for swinging
-  Icon: {fileID: 21300000, guid: e33ee091370ece844a0a06db7dfc8ac0, type: 3}
+  ItemName: Bow
+  Description: Bow for shooting arrows
+  Icon: {fileID: 21300000, guid: b819444dc12948849a0e07cc4fe3b87c, type: 3}
   DroppedItemPrefab: {fileID: 8050818797925199054, guid: c918d8d8c2059354c9b45bce2146eb45, type: 3}
-  WeaponPrefab: {fileID: 1715145831340306193, guid: d148344a7ff88b04b82c1a03e6ae99c6, type: 3}
+  WeaponPrefab: {fileID: 1715145831340306193, guid: 948e1a90ea5bf0d44ac2b99947d4d104, type: 3}

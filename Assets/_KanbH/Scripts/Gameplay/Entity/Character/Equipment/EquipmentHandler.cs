@@ -31,7 +31,7 @@ public class EquipmentHandler : MonoBehaviour
         {
             _weaponInstance = Instantiate(_equippedWeapon.WeaponPrefab, transform);
             _weaponController = _weaponInstance.GetComponent<WeaponController>();
-            _weaponInstance.SetActive(false);
+            //_weaponInstance.SetActive(false);
         }
     }
 

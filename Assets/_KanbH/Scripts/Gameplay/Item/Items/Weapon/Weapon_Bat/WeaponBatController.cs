@@ -6,19 +6,17 @@ using UnityEngine;
 using UnityEngine.Windows;
 using Input = UnityEngine.Input;
 
-public class WeaponController : MonoBehaviour
+public class WeaponBatController : WeaponController
 {
     public float swingSpeed = 400f; // degrees per second
     public float arcAngle = 180f;    // total arc angle (swing width)
-    public float weaponRange = 1.5f; // distance from player
     private float currentAngle = 0f;
     private float startingAngle = 0f;
     [SerializeField] private float knockbackMagnitude = 40f;
-    private Vector3 startPosition;
 
     private bool isSwinging = false;
 
-    public void UseWeapon(Vector2 attackDirection)
+    public override void UseWeapon(Vector2 attackDirection)
     {
         if (isSwinging == false)
         {
