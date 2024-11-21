@@ -7,12 +7,13 @@ using System.Collections.Generic;
 using CharlieMadeAThing.NeatoTags.Core;
 
 [Serializable, GeneratePropertyBag]
-[NodeDescription(name: "SightDetectPlayer", story: "[Agent] detects [Player] within [SightRange]", category: "_KanbH", id: "d7f6acc136ccded3091449e90181c2b1")]
-public partial class SightDetectPlayerAction : Action
+[NodeDescription(name: "DetectWithinRange", story: "Agent detects [Target] within [DetectRange]", category: "_KanbH", id: "af85eccbb6fde60fe7c4a3818da2f9cc")]
+public partial class DetectWithinRangeAction : Action
 {
-    [SerializeReference] public BlackboardVariable<GameObject> Agent;
-    [SerializeReference] public BlackboardVariable<GameObject> Player;
-    [SerializeReference] public BlackboardVariable<float> SightRange;
+    [SerializeReference] public BlackboardVariable<Transform> Target;
+    [SerializeReference] public BlackboardVariable<float> DetectRange;
+
+    private Transform _selfTransform;
 
     private List<RaycastHit2D> _rayHits = new List<RaycastHit2D>();
     private int _hitCount;
@@ -20,14 +21,18 @@ public partial class SightDetectPlayerAction : Action
 
     protected override Status OnStart()
     {
+        if (_selfTransform == null)
+        {
+            _selfTransform = GameObject.GetComponent<Transform>();
+        }
         _contactFilter.NoFilter();
         return Status.Running;
     }
 
     protected override Status OnUpdate()
     {
-        _hitCount = Physics2D.Raycast(Agent.Value.transform.position, Player.Value.transform.position - Agent.Value.transform.position, _contactFilter, _rayHits, SightRange.Value);
-        Debug.DrawRay(Agent.Value.transform.position, Player.Value.transform.position - Agent.Value.transform.position, Color.green);
+        _hitCount = Physics2D.Raycast(_selfTransform.position, Target.Value.position - _selfTransform.position, _contactFilter, _rayHits, DetectRange.Value);
+        Debug.DrawRay(_selfTransform.position, Target.Value.position - _selfTransform.position, Color.green);
 
         foreach (var hit in _rayHits)
         {
@@ -40,5 +45,6 @@ public partial class SightDetectPlayerAction : Action
         //Debug.Log("Player not detected...");
         return Status.Failure;
     }
+
 }
 
