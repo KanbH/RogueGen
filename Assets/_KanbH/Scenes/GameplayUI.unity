@@ -835,6 +835,14 @@ PrefabInstance:
       propertyPath: _roomsToGenerate
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 3985141845355091161, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
+      propertyPath: _roomPrefabList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985141845355091161, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
+      propertyPath: '_roomPrefabList.Array.data[0]'
+      value: 
+      objectReference: {fileID: 417078861964963130, guid: a65c9129b6cde774084beb81fdb92d5b, type: 3}
     - target: {fileID: 5575204089145023227, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
       propertyPath: _nodeManager
       value: 
@@ -847,6 +855,10 @@ PrefabInstance:
       propertyPath: _prototypeRoomGenerator
       value: 
       objectReference: {fileID: 746458326}
+    - target: {fileID: 5974604709683721631, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
+      propertyPath: m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5974604709683721631, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
       propertyPath: m_SortingOrder
       value: 0
@@ -959,15 +971,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5452109687813239754, guid: 6b1f11eb995ec314b9adc7d8ee6186c1, type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.25157225
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5452109687813239754, guid: 6b1f11eb995ec314b9adc7d8ee6186c1, type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.25157225
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5452109687813239754, guid: 6b1f11eb995ec314b9adc7d8ee6186c1, type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 0.25157225
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1085,11 +1097,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 40cf0dc4cf1a36e40adc0aee756b8d72, type: 2}
     - target: {fileID: 1953630939735346582, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1953630939735346582, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
       propertyPath: m_SortingLayerID
-      value: 1098804831
+      value: -824385815
       objectReference: {fileID: 0}
     - target: {fileID: 3686626509354583566, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
       propertyPath: m_Radius
