@@ -105,11 +105,11 @@ PrefabInstance:
     - target: {fileID: 675122750516186260, guid: 680240054a56e534b9f5a901c5bbf37c, type: 3}
       propertyPath: _baseWallTile
       value: 
-      objectReference: {fileID: 11400000, guid: c5a46c3fc7cd1944694df08eb3b9e1b0, type: 2}
+      objectReference: {fileID: 11400000, guid: e761f53bae3f9214e813f1739c2d873c, type: 2}
     - target: {fileID: 675122750516186260, guid: 680240054a56e534b9f5a901c5bbf37c, type: 3}
       propertyPath: _baseFloorTile
       value: 
-      objectReference: {fileID: 11400000, guid: 4a10d085d659bd44f87deeacfc26c6ae, type: 2}
+      objectReference: {fileID: 11400000, guid: 19a8ea23d2b09c246b050356ade92aa9, type: 2}
     - target: {fileID: 2198400278453540046, guid: 680240054a56e534b9f5a901c5bbf37c, type: 3}
       propertyPath: m_Name
       value: MapBaseTilemaps
@@ -123,8 +123,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8431598653816924169, guid: 680240054a56e534b9f5a901c5bbf37c, type: 3}
+      propertyPath: m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8431598653816924169, guid: 680240054a56e534b9f5a901c5bbf37c, type: 3}
       propertyPath: m_SortingLayer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8431598653816924169, guid: 680240054a56e534b9f5a901c5bbf37c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8431598653816924169, guid: 680240054a56e534b9f5a901c5bbf37c, type: 3}
       propertyPath: m_SortingLayerID
@@ -250,8 +258,12 @@ PrefabInstance:
       objectReference: {fileID: 6634285990051954985}
     - target: {fileID: 6810067895888961711, guid: 574e5e076c5e780428ccfd233dd491f9, type: 3}
       propertyPath: _roomsToGenerate
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 6810067895888961711, guid: 574e5e076c5e780428ccfd233dd491f9, type: 3}
+      propertyPath: '_roomPrefabList.Array.data[0]'
+      value: 
+      objectReference: {fileID: 417078861964963130, guid: a65c9129b6cde774084beb81fdb92d5b, type: 3}
     - target: {fileID: 8229107869936563051, guid: 574e5e076c5e780428ccfd233dd491f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

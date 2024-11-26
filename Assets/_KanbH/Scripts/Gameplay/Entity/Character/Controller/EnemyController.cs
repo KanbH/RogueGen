@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class EnemyController : EntityController
 {
-    [SerializeField] private float contactKnockbackMagnitude = 1000f;
-
     private CharacterStats _characterStats;
     private CharacterMovement _characterMovement;
     private MoveToDestination _moveToDestination;
@@ -18,15 +16,16 @@ public class EnemyController : EntityController
         _moveToDestination = GetComponent<MoveToDestination>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (collision.gameObject.HasTag("Player"))
+        if (other.gameObject.HasTag("Player"))
         {
-            DealDamage(collision.gameObject);
-            DealKnockback(collision.gameObject, contactKnockbackMagnitude);
+            DealDamage(other.gameObject);
+            DealKnockback(other.gameObject, contactKnockbackMagnitude);
         }
     }
-
+    */
     public override void TakeDamage(float damage)
     {
         _characterStats.Health -= damage;

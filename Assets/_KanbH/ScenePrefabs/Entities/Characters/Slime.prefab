@@ -105,7 +105,8 @@ GameObject:
   - component: {fileID: 7247919218333857033}
   - component: {fileID: 5453593981926860379}
   - component: {fileID: 4858112471315456660}
-  m_Layer: 7
+  - component: {fileID: 4342295986110466248}
+  m_Layer: 6
   m_Name: Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,6 +127,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3028530717101303026}
+  - {fileID: 2072593392125033206}
+  - {fileID: 8769063571896156366}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2724799877495668042
@@ -142,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tags:
   - {fileID: 11400000, guid: 23357308adf9ecd4981f7c6501f6f3c0, type: 2}
+  - {fileID: 11400000, guid: 40cf0dc4cf1a36e40adc0aee756b8d72, type: 2}
 --- !u!50 &8333827141273366698
 Rigidbody2D:
   serializedVersion: 5
@@ -155,7 +159,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 17
+  m_LinearDamping: 15
   m_AngularDamping: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -204,7 +208,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.3
+  m_Radius: 0.25
 --- !u!114 &12451452614623944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,7 +221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37f2bfbceadb9c43a3432b0f5b2e5a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contactKnockbackMagnitude: 15
 --- !u!114 &6048001980090000750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,10 +233,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c1bac610368d04e8be26e54c79b672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 100
+  _maxHealth: 200
+  _health: 200
   _strength: 15
   _toughness: 5
-  _agility: 20
+  _agility: 10
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4158637673546807570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba9b8af3476c54f45a22a050847ac3ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementStatsSO: {fileID: 11400000, guid: 826652ddb956f37468be593312777572, type: 2}
+  movementStatsSO: {fileID: 11400000, guid: 325d04f23db2dcd4694054e34bfacf96, type: 2}
 --- !u!114 &7247919218333857033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,11 +291,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0038c16c34866b4f9e25c9c0dc0f7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Graph: {fileID: 4951876997128701315, guid: 596f3f7a9874f684592436a6029a144f, type: 2}
+  m_Graph: {fileID: 4422378321672999315, guid: 7f1974be5901c8947a4b095761de75af, type: 2}
   m_BlackboardVariableOverridesList:
   - rid: 778803439576023395
-  - rid: 778803439576023497
-  - rid: 778803439576023498
+  - rid: 4633742684282946292
+  - rid: 4633742709817606661
+  - rid: 4633742709817606662
+  - rid: 4633742712460018221
+  - rid: 4633742712460018222
+  - rid: 4633742712460018223
   references:
     version: 2
     RefIds:
@@ -300,19 +311,175 @@ MonoBehaviour:
           m_Value1: 0
         Name: Self
         m_Value: {fileID: 1325750222948271416}
-    - rid: 778803439576023497
+    - rid: 4633742684282946292
       type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         GUID:
-          m_Value0: 10250533723729485979
-          m_Value1: 14060923619171970955
+          m_Value0: 16291638138405259594
+          m_Value1: 6173224197062170118
         Name: Player
         m_Value: {fileID: 0}
-    - rid: 778803439576023498
+    - rid: 4633742709817606661
       type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
       data:
         GUID:
-          m_Value0: 18371614818777735051
-          m_Value1: 3359857646475317861
-        Name: Sight Range
-        m_Value: 10
+          m_Value0: 13509851745279424505
+          m_Value1: 16790898382280229089
+        Name: JumpForce
+        m_Value: 40
+    - rid: 4633742709817606662
+      type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 2465002412029656046
+          m_Value1: 10737753061429744089
+        Name: JumpCooldown
+        m_Value: 3
+    - rid: 4633742712460018221
+      type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 17228298322276287719
+          m_Value1: 11728132558102332294
+        Name: ReChaseRange
+        m_Value: 2.5
+    - rid: 4633742712460018222
+      type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 17574787157005671829
+          m_Value1: 34741804247589733
+        Name: AttackRange
+        m_Value: 2
+    - rid: 4633742712460018223
+      type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 8226653575602717242
+          m_Value1: 3371810830066189693
+        Name: SightRange
+        m_Value: 7
+--- !u!114 &4342295986110466248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325750222948271416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b77d72bf4730f64087e4f19ea6fc3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &4904343170021006702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2072593392125033206}
+  - component: {fileID: 4325794035023575107}
+  m_Layer: 8
+  m_Name: Movementbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2072593392125033206
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4904343170021006702}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5647071497521620298}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &4325794035023575107
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4904343170021006702}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.02, y: -0.29}
+  m_Radius: 0.27
+--- !u!1 &8932306741898625194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8769063571896156366}
+  - component: {fileID: 8898092780803414888}
+  m_Layer: 10
+  m_Name: CollisionDamagebox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8769063571896156366
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8932306741898625194}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5647071497521620298}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8898092780803414888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8932306741898625194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 246a97aa4d82fc6439e43603ad961c84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

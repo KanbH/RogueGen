@@ -59,7 +59,7 @@ public class WeaponBatController : WeaponController
         this.gameObject.SetActive(false);
     }
 
-    private void OnTriggerEnter2D(UnityEngine.Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.HasTag("Enemy"))
         {

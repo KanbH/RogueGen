@@ -29,7 +29,7 @@ public class SoftCollider : MonoBehaviour
     {
         if (collision.gameObject.HasTag("Character"))
         {
-            Debug.Log("stay character collision");
+            //Debug.Log("stay character collision");
             // Continuously apply force while colliding
             Rigidbody2D otherRb = collision.rigidbody;
             if (otherRb != null)

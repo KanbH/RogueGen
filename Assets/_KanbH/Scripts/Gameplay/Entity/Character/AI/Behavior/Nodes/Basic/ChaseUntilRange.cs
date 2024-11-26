@@ -35,7 +35,7 @@ public partial class ChaseUntilRangeAction : Action
             //Target is within attaack range, begin attacking the target
             if (TargetWithinAttackRange())
             {
-                Debug.Log("Agent within the Range");
+                //Debug.Log("Agent within the Range");
                 _moveToDestination.ClearMovementTarget();
                 _hasChased = true;
                 return Status.Success;

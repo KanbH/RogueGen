@@ -28,7 +28,7 @@ public partial class SlimeJumpAction : Action
 
         if (Time.time < _lastJumpTime + Cooldown)
         {
-            Debug.Log("Jump on cooldown.");
+            //Debug.Log("Jump on cooldown.");
             return Status.Failure;
         }
 

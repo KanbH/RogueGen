@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 6855048591560517011}
   - component: {fileID: 2639781834924748941}
   - component: {fileID: 7102328294188498059}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WeaponPrefab_Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}

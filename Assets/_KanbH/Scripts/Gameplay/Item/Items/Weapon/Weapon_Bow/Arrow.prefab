@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2060355554137611797}
   - component: {fileID: 7086157120799502088}
   - component: {fileID: 6142302909884197872}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,4 +138,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   despawnTime: 3
-  speed: 2
