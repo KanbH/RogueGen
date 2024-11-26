@@ -28,7 +28,7 @@ public class WeaponBowController : WeaponController
     {
         Vector3 aimDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
         float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(transform.position.x, transform.position.y, angle);
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
 }

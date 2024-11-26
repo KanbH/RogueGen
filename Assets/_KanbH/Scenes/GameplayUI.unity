@@ -349,6 +349,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7494681757763312190, guid: 1caebf25cf881904c9f8694ea638e1f3, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7494681757763312190, guid: 1caebf25cf881904c9f8694ea638e1f3, type: 3}
+      propertyPath: 'm_ApplyToSortingLayers.Array.data[4]'
+      value: -593116063
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -372,7 +380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4325794035023575107, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
       propertyPath: m_Radius
-      value: 0.52
+      value: 0.38
       objectReference: {fileID: 0}
     - target: {fileID: 4325794035023575107, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
       propertyPath: m_Offset.x
@@ -384,7 +392,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4689675768930280518, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
       propertyPath: m_Radius
-      value: 0.5
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4689675768930280518, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4689675768930280518, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 4689675768930280518, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
       propertyPath: m_IsTrigger
@@ -394,6 +410,14 @@ PrefabInstance:
       propertyPath: managedReferences[4633742684282946292].m_Value
       value: 
       objectReference: {fileID: 1405974815}
+    - target: {fileID: 5392482991154760394, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5392482991154760394, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -593116063
+      objectReference: {fileID: 0}
     - target: {fileID: 5647071497521620298, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3
@@ -491,7 +515,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.11}
-  m_Radius: 0.58
+  m_Radius: 0.46
 --- !u!1 &705300518
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,7 +646,7 @@ PrefabInstance:
     - target: {fileID: 3366306070865957122, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
       propertyPath: _baseFloorTile
       value: 
-      objectReference: {fileID: 11400000, guid: 19a8ea23d2b09c246b050356ade92aa9, type: 2}
+      objectReference: {fileID: 11400000, guid: b6acf46b5cb77d442a737418d34fe5a7, type: 2}
     - target: {fileID: 3688841881033391047, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -827,10 +851,18 @@ PrefabInstance:
     - target: {fileID: 1895762814566258516, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
       propertyPath: _equippedWeapon
       value: 
-      objectReference: {fileID: 11400000, guid: a9f81574da47895478a48c350d672f12, type: 2}
+      objectReference: {fileID: 11400000, guid: 5446f783084c4c3489532ebacee9e24d, type: 2}
+    - target: {fileID: 1953630939735346582, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953630939735346582, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -593116063
+      objectReference: {fileID: 0}
     - target: {fileID: 3686626509354583566, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
       propertyPath: m_Radius
-      value: 0.57
+      value: 0.49
       objectReference: {fileID: 0}
     - target: {fileID: 3686626509354583566, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
       propertyPath: m_Material
