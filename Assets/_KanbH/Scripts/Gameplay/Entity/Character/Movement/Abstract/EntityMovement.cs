@@ -8,4 +8,5 @@ public abstract class EntityMovement : MonoBehaviour
     protected abstract void UpdateMovementSpeed();
 
     public abstract void ReceiveKnockback(Vector2 knockbackDirection, float magnitude);
+
 }

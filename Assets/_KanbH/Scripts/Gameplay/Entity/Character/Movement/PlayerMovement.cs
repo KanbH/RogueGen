@@ -16,6 +16,7 @@ public class PlayerMovement : EntityMovement
     {
         _rigidbody2d = GetComponent<Rigidbody2D>();
         _characterStats = GetComponent<CharacterStats>();
+        _movement = new Vector2(0, 0);
     }
 
     void Update()
@@ -54,4 +55,8 @@ public class PlayerMovement : EntityMovement
         _rigidbody2d.AddForce(knockbackDirection.normalized * calculatedMagnitude, ForceMode2D.Impulse);
     }
 
+    public Vector2 GetMovement()
+    {
+        return _movement;
+    }
 }
