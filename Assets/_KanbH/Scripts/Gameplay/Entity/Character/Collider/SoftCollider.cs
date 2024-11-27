@@ -8,7 +8,7 @@ public class SoftCollider : MonoBehaviour
 
     void Awake()
     {
-        _rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponentInParent<Rigidbody2D>();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -17,7 +17,7 @@ public class SoftCollider : MonoBehaviour
         {
             Debug.Log("enter character collision");
             // Check if the other object also has a Rigidbody2D
-            Rigidbody2D otherRb = collision.rigidbody;
+            Rigidbody2D otherRb = collision.gameObject.GetComponentInParent<Rigidbody2D>();
             if (otherRb != null)
             {
                 ApplyPushForce(otherRb, collision);
@@ -31,7 +31,7 @@ public class SoftCollider : MonoBehaviour
         {
             //Debug.Log("stay character collision");
             // Continuously apply force while colliding
-            Rigidbody2D otherRb = collision.rigidbody;
+            Rigidbody2D otherRb = collision.gameObject.GetComponentInParent<Rigidbody2D>();
             if (otherRb != null)
             {
                 ApplyPushForce(otherRb, collision);

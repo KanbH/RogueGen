@@ -36,11 +36,16 @@ public class PlayerController : EntityController
         // Detect left mouse button press
         if (Input.GetMouseButtonDown(0)) // Left mouse button or any attack key
         {
-            Vector2 AttackDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+            Vector2 direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition));
 
             // Attempted to use weapon
-            _equipmentHandler.PerformAttack(AttackDirection);
+            AttackAtDirection(direction);
         }
+    }
+
+    public override void AttackAtDirection(Vector2 AttackDirection)
+    {
+        _equipmentHandler.PerformAttack(AttackDirection, transform.position);
     }
 
     public override void DealDamage(GameObject target)
@@ -81,7 +86,6 @@ public class PlayerController : EntityController
 
     public override void Die()
     {
-        //blablabla dead animation
         this.gameObject.SetActive(false);
         Debug.Log("Player has died");
     }

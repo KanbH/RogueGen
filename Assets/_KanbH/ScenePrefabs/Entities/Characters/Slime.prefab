@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -824385815
-  m_SortingLayer: 3
+  m_SortingLayerID: -593116063
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -7282886668606283007, guid: 5ef8d26767f78e8429be06d79c5e1601, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1325750222948271416
@@ -105,8 +105,7 @@ GameObject:
   - component: {fileID: 7247919218333857033}
   - component: {fileID: 5453593981926860379}
   - component: {fileID: 4858112471315456660}
-  - component: {fileID: 4342295986110466248}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,12 +202,12 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.25
+  m_Offset: {x: 0, y: -0.07}
+  m_Radius: 0.45
 --- !u!114 &12451452614623944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,18 +358,6 @@ MonoBehaviour:
           m_Value1: 3371810830066189693
         Name: SightRange
         m_Value: 7
---- !u!114 &4342295986110466248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325750222948271416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b77d72bf4730f64087e4f19ea6fc3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4904343170021006702
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,8 +424,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.02, y: -0.29}
-  m_Radius: 0.27
+  m_Offset: {x: 0, y: -0.07}
+  m_Radius: 0.38
 --- !u!1 &8932306741898625194
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,6 +435,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8769063571896156366}
+  - component: {fileID: 7479868939281584215}
   - component: {fileID: 8898092780803414888}
   m_Layer: 10
   m_Name: CollisionDamagebox
@@ -471,6 +459,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5647071497521620298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &7479868939281584215
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8932306741898625194}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: -0.11}
+  m_Radius: 0.46
 --- !u!114 &8898092780803414888
 MonoBehaviour:
   m_ObjectHideFlags: 0

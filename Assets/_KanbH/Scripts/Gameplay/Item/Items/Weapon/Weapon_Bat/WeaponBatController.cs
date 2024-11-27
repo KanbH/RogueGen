@@ -16,11 +16,11 @@ public class WeaponBatController : WeaponController
 
     private bool isSwinging = false;
 
-    public override void UseWeapon(Vector2 attackDirection)
+    public override void UseWeapon(Vector2 attackDirection, Vector2 attackerPosition)
     {
         if (isSwinging == false)
         {
-            StartSwing(attackDirection);
+            StartSwing((attackDirection - attackerPosition).normalized);
         }
     }
     public void StartSwing(Vector2 swingDirection)

@@ -2,48 +2,35 @@ using CharlieMadeAThing.NeatoTags.Core;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NUnit.Framework;
 
 public class EnemyController : EntityController
 {
     private CharacterStats _characterStats;
     private CharacterMovement _characterMovement;
     private MoveToDestination _moveToDestination;
+    private EquipmentHandler _equipmentHandler;
 
     void Awake()
     {
         _characterStats = GetComponent<CharacterStats>();
         _characterMovement = GetComponent<CharacterMovement>();
         _moveToDestination = GetComponent<MoveToDestination>();
+        _equipmentHandler = GetComponent<EquipmentHandler>();
+
+        Assert.IsNotNull(_characterStats);
+        Assert.IsNotNull(_characterMovement);
+        Assert.IsNotNull(_moveToDestination);
+        Assert.IsNotNull(_equipmentHandler);
     }
 
-    /*
-    private void OnCollisionEnter2D(Collision2D other)
+    public override void AttackAtDirection(Vector2 AttackDirection)
     {
-        if (other.gameObject.HasTag("Player"))
-        {
-            DealDamage(other.gameObject);
-            DealKnockback(other.gameObject, contactKnockbackMagnitude);
-        }
-    }
-    */
-    public override void TakeDamage(float damage)
-    {
-        _characterStats.Health -= damage;
-
-        if (_characterStats.HealthBelow0)
-        {
-            Die();
-        }
-    }
-
-    public override void Die()
-    {
-        this.gameObject.SetActive(false);
-    }
+        _equipmentHandler.PerformAttack(AttackDirection, transform.position);
+    } 
 
     public override void DealDamage(GameObject target)
     {
-        // Get the PlayerStats component on the player
         EntityController playerController = target.GetComponent<EntityController>();
 
         if (playerController != null)
@@ -51,6 +38,16 @@ public class EnemyController : EntityController
             // Deal damage to the player
             playerController.TakeDamage(DamageCalculator.CalculateDamage(_characterStats, playerController.GetCharacterStats()));
             Debug.Log("Enemy dealt damage to the player!");
+        }
+    }
+
+    public override void TakeDamage(float damage)
+    {
+        _characterStats.Health -= damage;
+
+        if (_characterStats.HealthBelow0)
+        {
+            Die();
         }
     }
 
@@ -62,6 +59,11 @@ public class EnemyController : EntityController
         {
             entityMovement.ReceiveKnockback(knockbackDirection, magnitude);
         }
+    }
+
+    public override void Die()
+    {
+        this.gameObject.SetActive(false);
     }
 
     public override CharacterStats GetCharacterStats()

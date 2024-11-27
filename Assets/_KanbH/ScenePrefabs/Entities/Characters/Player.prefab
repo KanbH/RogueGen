@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2706817282260352613}
   - component: {fileID: 1953630939735346582}
+  - component: {fileID: 6691504909731169295}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -73,10 +74,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -824385815
-  m_SortingLayer: 3
+  m_SortingLayerID: -593116063
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4d4d42088bae6814687909fa3ce5035f, type: 3}
+  m_Sprite: {fileID: -699482494871104696, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -87,6 +88,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6691504909731169295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316047947251723259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ed722a74f17ac4da8aab73a5b39fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NorthWalkingSprite:
+  - {fileID: 8723326710519346838, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: 7613925892477935890, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: 8723326710519346838, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: -7328758110157413022, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  SouthWalkingSprite:
+  - {fileID: -699482494871104696, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: -6421832550704190622, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: -699482494871104696, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: -1934047083389256418, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  EastWalkingSprite:
+  - {fileID: 2177059042379363291, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: 6950655870171042120, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: 2177059042379363291, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: 6997402722289327261, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  WestWalkingSprite:
+  - {fileID: -3611818216074491956, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: -9185404357023599679, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: -3611818216074491956, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: 1652269345352189190, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  frameRate: 0.15
 --- !u!1 &1937356976030242711
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,76 +187,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.02, y: -0.29}
-  m_Radius: 0.39
---- !u!1 &3847145052395678117
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3957283417559812345}
-  - component: {fileID: 1191978407230172862}
-  m_Layer: 9
-  m_Name: Hitbox
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3957283417559812345
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3847145052395678117}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7535125884493346342}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1191978407230172862
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3847145052395678117}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.35
+  m_Offset: {x: 0.04, y: -0.19}
+  m_Radius: 0.47
 --- !u!1 &6905014320686261617
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,8 +208,7 @@ GameObject:
   - component: {fileID: 6296004181175068855}
   - component: {fileID: 9125124837433857089}
   - component: {fileID: 3951536765954039021}
-  - component: {fileID: 7890469059958854851}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +230,6 @@ Transform:
   m_Children:
   - {fileID: 2706817282260352613}
   - {fileID: 982198555151637137}
-  - {fileID: 3957283417559812345}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1644787555082072019
@@ -344,8 +308,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.25
+  m_Offset: {x: 0.03, y: -0.03}
+  m_Radius: 0.49
 --- !u!114 &71738193254533321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,15 +424,3 @@ MonoBehaviour:
   interactableLayer:
     serializedVersion: 2
     m_Bits: 128
---- !u!114 &7890469059958854851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6905014320686261617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b77d72bf4730f64087e4f19ea6fc3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

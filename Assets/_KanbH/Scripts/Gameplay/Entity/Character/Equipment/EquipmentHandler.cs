@@ -31,18 +31,18 @@ public class EquipmentHandler : MonoBehaviour
         {
             _weaponInstance = Instantiate(_equippedWeapon.WeaponPrefab, transform);
             _weaponController = _weaponInstance.GetComponent<WeaponController>();
-            //_weaponInstance.SetActive(false);
+            _weaponInstance.SetActive(false);
         }
     }
 
     // Perform an attack
-    public void PerformAttack(Vector2 attackDirection)
+    public void PerformAttack(Vector2 attackDirection, Vector2 attackerPosition)
     {
         if (_weaponInstance != null)
         {
             _weaponInstance.SetActive(true);
             // Attack logic can vary, hereÅfs a simple example:
-            _weaponController.UseWeapon(attackDirection);
+            _weaponController.UseWeapon(attackDirection, attackerPosition);
         }
     }
     

@@ -5,7 +5,7 @@ public class WeaponBowController : WeaponController
     [SerializeField] private GameObject ArrowPrefab;
     [SerializeField] private float _arrowSpeed;
 
-    public override void UseWeapon(Vector2 attackDirection)
+    public override void UseWeapon(Vector2 attackDirection, Vector2 attackerTransform)
     {
         ShootArrow(attackDirection);
     }
