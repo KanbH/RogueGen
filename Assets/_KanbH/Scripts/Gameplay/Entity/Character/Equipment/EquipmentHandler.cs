@@ -27,7 +27,7 @@ public class EquipmentHandler : MonoBehaviour
         }
 
         // Instantiate the weapon prefab as a child of the player (optional, based on your setup)
-        if (_equippedWeapon.WeaponPrefab != null)
+        if (_equippedWeapon != null && _equippedWeapon.WeaponPrefab != null)
         {
             _weaponInstance = Instantiate(_equippedWeapon.WeaponPrefab, transform);
             _weaponController = _weaponInstance.GetComponent<WeaponController>();
