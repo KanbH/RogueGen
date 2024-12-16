@@ -5,20 +5,21 @@ using NUnit.Framework;
 
 public class PlayerController : EntityController
 {
+
     private PlayerMovement _playerMovement;
-    private CharacterStats _characterStats;
     private InventoryManager _inventoryManager;
     private EquipmentHandler _equipmentHandler;
 
     void Awake()
     {
-        _playerMovement = GetComponent<PlayerMovement>();
         _characterStats = GetComponent<CharacterStats>();
+        _playerMovement = GetComponent<PlayerMovement>();
         _inventoryManager = GetComponent<InventoryManager>();
         _equipmentHandler = GetComponent<EquipmentHandler>();
 
-        Assert.IsNotNull(_playerMovement);
+        Assert.IsNotNull(_faction);
         Assert.IsNotNull(_characterStats);
+        Assert.IsNotNull(_playerMovement);
         Assert.IsNotNull(_inventoryManager);
         Assert.IsNotNull(_equipmentHandler);
     }
@@ -90,8 +91,4 @@ public class PlayerController : EntityController
         Debug.Log("Player has died");
     }
 
-    public override CharacterStats GetCharacterStats()
-    {
-        return _characterStats;
-    }
 }

@@ -14,13 +14,14 @@ public class CollisionDamage : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.HasTag("Player"))
+        if (col.gameObject.HasTag("Entity"))
         {
-            EntityController otherController = col.gameObject.GetComponentInParent<EntityController>();
-            _entityController.DealDamage(col.gameObject);
-            _entityController.DealKnockback(col.gameObject, contactKnockbackMagnitude);
+            if (_entityController.GetFactionID() != col.gameObject.GetComponent<EntityController>().GetFactionID())
+            {
+                _entityController.DealDamage(col.gameObject);
+                _entityController.DealKnockback(col.gameObject, contactKnockbackMagnitude);
+            }
         }
     }
-
 
 }

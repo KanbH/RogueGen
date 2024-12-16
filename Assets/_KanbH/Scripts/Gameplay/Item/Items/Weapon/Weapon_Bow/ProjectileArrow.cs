@@ -7,7 +7,7 @@ public class ProjectileArrow : MonoBehaviour
 
     private float _speed;
     private Vector2 _direction;
-    private EntityController _entityController;
+    private EntityController _weaponUserController;
     private Rigidbody2D _rigidbody2D;
     private bool initialized = false;
 
@@ -15,7 +15,7 @@ public class ProjectileArrow : MonoBehaviour
     {
         _speed = speed;
         _direction = direction.normalized;
-        _entityController = entityController;
+        _weaponUserController = entityController;
         _rigidbody2D = GetComponent<Rigidbody2D>();
         SetRotation(_direction);
         initialized = true;
@@ -34,14 +34,13 @@ public class ProjectileArrow : MonoBehaviour
     void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
         // Collision logic with enemies, walls, or obstacles
-        if (collision.gameObject.HasTag("Enemy"))
+        if (collision.gameObject.HasTag("Entity"))
         {
-            _entityController.DealDamage(collision.gameObject);
-            Destroy(gameObject);
-        }
-        else if (collision.gameObject.HasTag("Player"))
-        {
-            
+            if (_weaponUserController.GetFactionID() != collision.gameObject.GetComponent<EntityController>().GetFactionID())
+            {
+                _weaponUserController.DealDamage(collision.gameObject);
+                Destroy(gameObject);
+            }
         }
         else
         {

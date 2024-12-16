@@ -8,8 +8,8 @@ using Input = UnityEngine.Input;
 
 public class WeaponBatController : WeaponController
 {
-    public float swingSpeed = 400f; // degrees per second
-    public float arcAngle = 180f;    // total arc angle (swing width)
+    public float swingSpeed = 650f; // degrees per second
+    public float arcAngle = 160f;    // total arc angle (swing width)
     private float currentAngle = 0f;
     private float startingAngle = 0f;
     [SerializeField] private float knockbackMagnitude = 40f;
@@ -61,11 +61,13 @@ public class WeaponBatController : WeaponController
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.HasTag("Enemy"))
+        if (collision.gameObject.HasTag("Entity"))
         {
-            PlayerController playerController = gameObject.GetComponentInParent<PlayerController>();
-            playerController.DealDamage(collision.gameObject);
-            playerController.DealKnockback(collision.gameObject, knockbackMagnitude);
+            if (_weaponUserController.GetFactionID() != collision.gameObject.GetComponent<EntityController>().GetFactionID())
+            {
+                _weaponUserController.DealDamage(collision.gameObject);
+                _weaponUserController.DealKnockback(collision.gameObject, knockbackMagnitude);
+            }
         }
     }
 }

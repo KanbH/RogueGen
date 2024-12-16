@@ -6,7 +6,6 @@ using NUnit.Framework;
 
 public class EnemyController : EntityController
 {
-    private CharacterStats _characterStats;
     private CharacterMovement _characterMovement;
     private MoveToDestination _moveToDestination;
     private EquipmentHandler _equipmentHandler;
@@ -18,6 +17,7 @@ public class EnemyController : EntityController
         _moveToDestination = GetComponent<MoveToDestination>();
         _equipmentHandler = GetComponent<EquipmentHandler>();
 
+        Assert.IsNotNull(_faction);
         Assert.IsNotNull(_characterStats);
         Assert.IsNotNull(_characterMovement);
         Assert.IsNotNull(_moveToDestination);
@@ -65,10 +65,4 @@ public class EnemyController : EntityController
     {
         this.gameObject.SetActive(false);
     }
-
-    public override CharacterStats GetCharacterStats()
-    {
-        return _characterStats;
-    }
-
 }

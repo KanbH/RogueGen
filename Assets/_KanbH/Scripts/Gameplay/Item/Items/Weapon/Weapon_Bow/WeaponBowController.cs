@@ -19,8 +19,7 @@ public class WeaponBowController : WeaponController
     {
         GameObject arrow = Instantiate(ArrowPrefab, this.gameObject.transform.position, Quaternion.identity);
         ProjectileArrow projectileArrow = arrow.GetComponent<ProjectileArrow>();
-        EntityController entityController = GetComponentInParent<EntityController>();
-        projectileArrow.InitializeArrow(shootDirection, _arrowSpeed, entityController);
+        projectileArrow.InitializeArrow(shootDirection, _arrowSpeed, _weaponUserController);
 
     }
 

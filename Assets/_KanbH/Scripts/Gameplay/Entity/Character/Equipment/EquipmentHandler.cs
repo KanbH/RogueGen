@@ -4,11 +4,13 @@ public class EquipmentHandler : MonoBehaviour
 {
     [SerializeField] private Weapon _equippedWeapon;
 
+    private EntityController _entityController;
     private GameObject _weaponInstance;
     private WeaponController _weaponController;
 
     private void Awake()
     {
+        _entityController = GetComponent<EntityController>();
         InstantiateEquippedWeapon();
     }
 
@@ -31,6 +33,7 @@ public class EquipmentHandler : MonoBehaviour
         {
             _weaponInstance = Instantiate(_equippedWeapon.WeaponPrefab, transform);
             _weaponController = _weaponInstance.GetComponent<WeaponController>();
+            _weaponController.SetWeaponUser(_entityController);
             _weaponInstance.SetActive(false);
         }
     }
