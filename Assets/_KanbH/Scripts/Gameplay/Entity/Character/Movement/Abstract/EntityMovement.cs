@@ -6,7 +6,7 @@ public abstract class EntityMovement : MonoBehaviour
 {
     protected abstract void HandleMovement();
     protected abstract void UpdateMovementSpeed();
-
+    public abstract Vector2 GetMovement();
     public abstract void ReceiveKnockback(Vector2 knockbackDirection, float magnitude);
 
 }

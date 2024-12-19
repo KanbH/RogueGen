@@ -5,41 +5,41 @@ using UnityEngine;
 
 public class WalkingAnimation : MonoBehaviour
 {
-    [SerializeField] private List<Sprite> NorthWalkingSprite;
-    [SerializeField] private List<Sprite> SouthWalkingSprite;
-    [SerializeField] private List<Sprite> EastWalkingSprite;
-    [SerializeField] private List<Sprite> WestWalkingSprite;
-    [SerializeField] private float frameRate = 0.1f;
+    [SerializeField] protected List<Sprite> NorthWalkingSprite;
+    [SerializeField] protected List<Sprite> SouthWalkingSprite;
+    [SerializeField] protected List<Sprite> EastWalkingSprite;
+    [SerializeField] protected List<Sprite> WestWalkingSprite;
+    [SerializeField] private float frameRate = 0.2f;
 
-    private enum SpriteDirection { North, South, East, West }
-    private SpriteDirection _facingDirection = SpriteDirection.South;
-    private List<Sprite> _currentWalkingSprite;
+    protected enum SpriteDirection { North, South, East, West }
+    protected SpriteDirection _facingDirection = SpriteDirection.South;
+    protected List<Sprite> _currentWalkingSprite;
 
-    private SpriteRenderer _spriteRenderer;
-    private PlayerMovement _playerMovement;
-    private Vector2 _movement;
-    private Vector2 _direction;
+    protected SpriteRenderer _spriteRenderer;
+    protected EntityMovement _entityMovement;
+    protected Vector2 _movement;
+    protected Vector2 _lookingDirection;
 
     private int _currentSpriteIndex = 0;
-    private bool _isWalking = false;
+    protected bool _isWalking = false;
     private Coroutine _walkCycleCoroutine;
 
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _playerMovement = GetComponentInParent<PlayerMovement>();
+        _entityMovement = GetComponentInParent<EntityMovement>();
         _currentWalkingSprite = SouthWalkingSprite;
     }
 
     void Update()
     {
         //Check if the character is moving (replace with your movement logic)
-        _movement = _playerMovement.GetMovement();
-        _direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+        _movement = _entityMovement.GetMovement();
+        _lookingDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
 
         if (_movement.magnitude > 0)
         {
-            _facingDirection = Vector2ToSpriteDirection(_direction);
+            _facingDirection = Vector2ToSpriteDirection(_movement);
             ChangeSpriteDirection(_facingDirection);
             //Debug.Log("Player is moving, switching sprite...");
             if (!_isWalking)
@@ -57,7 +57,7 @@ public class WalkingAnimation : MonoBehaviour
         }
     }
 
-    private void StartWalking()
+    protected void StartWalking()
     {
         _isWalking = true;
 
@@ -67,7 +67,7 @@ public class WalkingAnimation : MonoBehaviour
         _walkCycleCoroutine = StartCoroutine(CycleSprites());
     }
 
-    private void StopWalking()
+    protected void StopWalking()
     {
         _isWalking = false;
 
@@ -97,7 +97,7 @@ public class WalkingAnimation : MonoBehaviour
         }
     }
 
-    private SpriteDirection Vector2ToSpriteDirection(Vector2 vector)
+    protected SpriteDirection Vector2ToSpriteDirection(Vector2 vector)
     {
         // Normalize the input vector for direction calculation
         vector = vector.normalized;
@@ -125,7 +125,7 @@ public class WalkingAnimation : MonoBehaviour
         else return _facingDirection;
     }
 
-    private void ChangeSpriteDirection(SpriteDirection spriteDirection)
+    protected void ChangeSpriteDirection(SpriteDirection spriteDirection)
     {
         // Set sprite based on direction
         switch (spriteDirection)

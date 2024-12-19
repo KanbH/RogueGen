@@ -54,4 +54,9 @@ public class CharacterMovement : EntityMovement
     {
         _movementDirection = direction;
     }
+
+    public override Vector2 GetMovement()
+    {
+        return _movementDirection;
+    }
 }

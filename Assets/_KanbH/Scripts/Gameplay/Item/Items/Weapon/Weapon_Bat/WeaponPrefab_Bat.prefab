@@ -169,6 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c901edb864f4fa4da4cbfc3ab1a4b90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swingSpeed: 400
+  swingSpeed: 550
   arcAngle: 180
   knockbackMagnitude: 40

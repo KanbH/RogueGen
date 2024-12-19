@@ -55,7 +55,7 @@ public class PlayerMovement : EntityMovement
         _rigidbody2d.AddForce(knockbackDirection.normalized * calculatedMagnitude, ForceMode2D.Impulse);
     }
 
-    public Vector2 GetMovement()
+    public override Vector2 GetMovement()
     {
         return _movement;
     }

@@ -402,6 +402,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _equippedWeapon: {fileID: 11400000, guid: a9f81574da47895478a48c350d672f12, type: 2}
+--- !u!1 &244052025 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1210704773538919023, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
+  m_PrefabInstance: {fileID: 582958055}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &244052028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244052025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ed722a74f17ac4da8aab73a5b39fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NorthWalkingSprite:
+  - {fileID: 5052247643355002824, guid: 025433f5bd24bca4fa1f65f99334e8be, type: 3}
+  - {fileID: 7063689992543968921, guid: 025433f5bd24bca4fa1f65f99334e8be, type: 3}
+  SouthWalkingSprite:
+  - {fileID: 5052247643355002824, guid: 025433f5bd24bca4fa1f65f99334e8be, type: 3}
+  - {fileID: 7063689992543968921, guid: 025433f5bd24bca4fa1f65f99334e8be, type: 3}
+  EastWalkingSprite:
+  - {fileID: 5052247643355002824, guid: 025433f5bd24bca4fa1f65f99334e8be, type: 3}
+  - {fileID: 7063689992543968921, guid: 025433f5bd24bca4fa1f65f99334e8be, type: 3}
+  WestWalkingSprite:
+  - {fileID: 5052247643355002824, guid: 025433f5bd24bca4fa1f65f99334e8be, type: 3}
+  - {fileID: 7063689992543968921, guid: 025433f5bd24bca4fa1f65f99334e8be, type: 3}
+  frameRate: 0.5
+--- !u!1 &267823393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1210704773538919023, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
+  m_PrefabInstance: {fileID: 1391477440}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &267823396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267823393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ed722a74f17ac4da8aab73a5b39fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NorthWalkingSprite:
+  - {fileID: 3214113913641202773, guid: d0bc39a26a9cf9b45b7f25da5446ade1, type: 3}
+  SouthWalkingSprite:
+  - {fileID: -3351252694960024418, guid: d0bc39a26a9cf9b45b7f25da5446ade1, type: 3}
+  EastWalkingSprite:
+  - {fileID: 6478888276870128725, guid: d0bc39a26a9cf9b45b7f25da5446ade1, type: 3}
+  WestWalkingSprite:
+  - {fileID: 650376497174939315, guid: d0bc39a26a9cf9b45b7f25da5446ade1, type: 3}
+  frameRate: 0.2
 --- !u!1001 &582958055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -537,6 +593,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1325750222948271416, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1775200911}
+    - targetCorrespondingSourceObject: {fileID: 1210704773538919023, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 244052028}
     - targetCorrespondingSourceObject: {fileID: 4904343170021006702, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
       insertIndex: -1
       addedObject: {fileID: 818153940}
@@ -1054,7 +1113,7 @@ PrefabInstance:
     - target: {fileID: 5392482991154760394, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2b1e38c5abfe47e44b7f57ae0f1d51df, type: 3}
+      objectReference: {fileID: -3351252694960024418, guid: d0bc39a26a9cf9b45b7f25da5446ade1, type: 3}
     - target: {fileID: 5392482991154760394, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
       propertyPath: m_SortingLayer
       value: 4
@@ -1119,6 +1178,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1325750222948271416, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
       insertIndex: -1
       addedObject: {fileID: 215150875}
+    - targetCorrespondingSourceObject: {fileID: 1210704773538919023, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 267823396}
     - targetCorrespondingSourceObject: {fileID: 4904343170021006702, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1752099356}
@@ -1235,10 +1297,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6691504909731169295, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1316047947251723259, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1405974818}
     - targetCorrespondingSourceObject: {fileID: 1937356976030242711, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
       insertIndex: -1
       addedObject: {fileID: 68508435}
@@ -1253,6 +1319,44 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7535125884493346342, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
   m_PrefabInstance: {fileID: 1405974814}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1405974817 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1316047947251723259, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
+  m_PrefabInstance: {fileID: 1405974814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1405974818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405974817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af32f9e4102d494438392888811dc5fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NorthWalkingSprite:
+  - {fileID: 8723326710519346838, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: 7613925892477935890, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: 8723326710519346838, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: -7328758110157413022, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  SouthWalkingSprite:
+  - {fileID: -699482494871104696, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: -6421832550704190622, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: -699482494871104696, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: -1934047083389256418, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  EastWalkingSprite:
+  - {fileID: 2177059042379363291, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: 6950655870171042120, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: 2177059042379363291, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: 6997402722289327261, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  WestWalkingSprite:
+  - {fileID: -3611818216074491956, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: -9185404357023599679, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: -3611818216074491956, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  - {fileID: 1652269345352189190, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
+  frameRate: 0.2
 --- !u!1 &1469913996
 GameObject:
   m_ObjectHideFlags: 0
