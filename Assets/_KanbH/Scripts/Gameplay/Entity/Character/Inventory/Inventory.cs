@@ -25,6 +25,11 @@ public class Inventory : MonoBehaviour
         Debug.Log($"Removed {item.ItemName} from inventory.");
     }
 
+    public void ClearInventory()
+    {
+        InventoryItems.Clear();
+    }
+
     public bool ContainsItem(Item item)
     {
         return InventoryItems.Contains(item);
@@ -47,9 +52,20 @@ public class Inventory : MonoBehaviour
         return null;
     }
 
+    public void DropItem(Item item)
+    {
+        item.DropItem(this.transform.position);
+    }
+
     public void RemoveAndDropItem(Item item)
     {
         RemoveItem(item);
-        item.DropItem(this.transform.position);
+        DropItem(item);
+    }
+
+    public void DropAllItems()
+    {
+        foreach (Item item in InventoryItems) { DropItem(item); }
+        ClearInventory();
     }
 }

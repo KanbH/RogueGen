@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2706817282260352613}
   - component: {fileID: 1953630939735346582}
-  - component: {fileID: 6691504909731169295}
+  - component: {fileID: 126292327938324885}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6691504909731169295
+--- !u!114 &126292327938324885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1316047947251723259}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3ed722a74f17ac4da8aab73a5b39fe6, type: 3}
+  m_Script: {fileID: 11500000, guid: af32f9e4102d494438392888811dc5fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   NorthWalkingSprite:
@@ -120,7 +120,7 @@ MonoBehaviour:
   - {fileID: -9185404357023599679, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
   - {fileID: -3611818216074491956, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
   - {fileID: 1652269345352189190, guid: 42e03b920ac3fec42a4136729c0b1c4c, type: 3}
-  frameRate: 0.15
+  frameRate: 0.2
 --- !u!1 &1937356976030242711
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,6 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 982198555151637137}
   - component: {fileID: 5055002267867400827}
+  - component: {fileID: 3184766808217658387}
   m_Layer: 8
   m_Name: Movementbox
   m_TagString: Untagged
@@ -187,8 +188,20 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.04, y: -0.19}
-  m_Radius: 0.47
+  m_Offset: {x: -0.01, y: -0.19}
+  m_Radius: 0.43
+--- !u!114 &3184766808217658387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937356976030242711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b77d72bf4730f64087e4f19ea6fc3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6905014320686261617
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +260,7 @@ MonoBehaviour:
   tags:
   - {fileID: 11400000, guid: eb5c65d20a4c56e4dab2e360f059dcb9, type: 2}
   - {fileID: 11400000, guid: 40cf0dc4cf1a36e40adc0aee756b8d72, type: 2}
+  - {fileID: 11400000, guid: 94a7b94a3e4a99f489938049540f1fe0, type: 2}
 --- !u!50 &6596528658574720012
 Rigidbody2D:
   serializedVersion: 5
@@ -322,6 +336,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 392a9cc27e66b7e42ace0993472fa435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _faction: {fileID: 11400000, guid: 5b6fca80faaa2b148af4b220563743d3, type: 2}
+  _isInvincible: 0
 --- !u!114 &308559277936437745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,7 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efd8d145f28d01439530fd03e32da95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _equippedWeapon: {fileID: 11400000, guid: 5446f783084c4c3489532ebacee9e24d, type: 2}
+  _equippedWeapon: {fileID: 11400000, guid: a9f81574da47895478a48c350d672f12, type: 2}
 --- !u!114 &6296004181175068855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,9 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3881dfb91d7a2074d8db254e116227af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InventoryItems:
-  - {fileID: 11400000, guid: 804ee5ce8a3005f4dbc4766c09817864, type: 2}
-  - {fileID: 11400000, guid: 804ee5ce8a3005f4dbc4766c09817864, type: 2}
+  InventoryItems: []
   _maxCapacity: 32
 --- !u!114 &3951536765954039021
 MonoBehaviour:

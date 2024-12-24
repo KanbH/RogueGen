@@ -31,23 +31,26 @@ public class EnemyController : EntityController
 
     public override void DealDamage(GameObject target)
     {
-        EntityController playerController = target.GetComponent<EntityController>();
+        EntityController entityController = target.GetComponent<EntityController>();
 
-        if (playerController != null)
+        if (entityController != null)
         {
             // Deal damage to the player
-            playerController.TakeDamage(DamageCalculator.CalculateDamage(_characterStats, playerController.GetCharacterStats()));
+            entityController.TakeDamage(DamageCalculator.CalculateDamage(_characterStats, entityController.GetCharacterStats()));
             Debug.Log("Enemy dealt damage to the player!");
         }
     }
 
     public override void TakeDamage(float damage)
     {
-        _characterStats.Health -= damage;
-
-        if (_characterStats.HealthBelow0)
+        if (!_isInvincible)
         {
-            Die();
+            _characterStats.Health -= damage;
+
+            if (_characterStats.HealthBelow0)
+            {
+                Die();
+            }
         }
     }
 

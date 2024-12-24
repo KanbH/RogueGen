@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class EntityController : MonoBehaviour
 {
     [SerializeField] protected Faction _faction;
+    [SerializeField] protected bool _isInvincible = false;
     protected CharacterStats _characterStats;
 
     public abstract void AttackAtDirection(Vector2 direction);
@@ -18,6 +19,7 @@ public abstract class EntityController : MonoBehaviour
         EntityController targetController = target.GetComponent<EntityController>();
         if (targetController != null)
         {
+            if (GetFactionID() == 1000) { return false; }
             if (GetFactionID() == targetController.GetFactionID()) { return true; }
         }
         return false;

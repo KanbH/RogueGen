@@ -64,14 +64,17 @@ public class PlayerController : EntityController
 
     public override void TakeDamage(float damage)
     {
-        //bla bla bla defense calculation
-        _characterStats.Health -= damage;
-        Debug.Log($"Player took {damage} damage and have {_characterStats.Health} HP left");
-
-        if (_characterStats.HealthBelow0)
+        if (!_isInvincible)
         {
-            //blablabla resurection
-            Die();
+            //bla bla bla defense calculation
+            _characterStats.Health -= damage;
+            Debug.Log($"Player took {damage} damage and have {_characterStats.Health} HP left");
+
+            if (_characterStats.HealthBelow0)
+            {
+                //blablabla resurection
+                Die();
+            }
         }
     }
 

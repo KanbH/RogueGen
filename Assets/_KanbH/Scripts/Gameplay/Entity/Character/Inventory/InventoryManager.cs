@@ -1,4 +1,5 @@
 using UnityEngine;
+using NUnit.Framework;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -7,14 +8,8 @@ public class InventoryManager : MonoBehaviour
     private void Awake()
     {
         _inventory = GetComponent<Inventory>();
-    }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            _inventory.RemoveAndDropItem(_inventory.FindFirstItem());
-        }
+        Assert.IsNotNull(_inventory);
     }
 
     public bool PickUpItem(Item item)
