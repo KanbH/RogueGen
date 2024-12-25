@@ -318,8 +318,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3881dfb91d7a2074d8db254e116227af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InventoryItems:
-  - {fileID: 11400000, guid: 804ee5ce8a3005f4dbc4766c09817864, type: 2}
-  - {fileID: 11400000, guid: a9f81574da47895478a48c350d672f12, type: 2}
-  - {fileID: 11400000, guid: 5446f783084c4c3489532ebacee9e24d, type: 2}
+  InventoryItems: []
   _maxCapacity: 16
