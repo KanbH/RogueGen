@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8914097031036933497}
   - component: {fileID: 4789453171121936683}
-  - component: {fileID: 5156633223499687630}
+  - component: {fileID: 2062349244795232033}
   - component: {fileID: 9031684542559628733}
   m_Layer: 0
   m_Name: Sprite
@@ -89,7 +89,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5156633223499687630
+--- !u!114 &2062349244795232033
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,22 +98,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 964731402903175237}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3ed722a74f17ac4da8aab73a5b39fe6, type: 3}
+  m_Script: {fileID: 11500000, guid: 05dba184847081443975b6d62ff4a79a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NorthWalkingSprite:
-  - {fileID: 5052247643355002824, guid: 025433f5bd24bca4fa1f65f99334e8be, type: 3}
-  - {fileID: 7063689992543968921, guid: 025433f5bd24bca4fa1f65f99334e8be, type: 3}
-  SouthWalkingSprite:
-  - {fileID: 5052247643355002824, guid: 025433f5bd24bca4fa1f65f99334e8be, type: 3}
-  - {fileID: 7063689992543968921, guid: 025433f5bd24bca4fa1f65f99334e8be, type: 3}
-  EastWalkingSprite:
-  - {fileID: 5052247643355002824, guid: 025433f5bd24bca4fa1f65f99334e8be, type: 3}
-  - {fileID: 7063689992543968921, guid: 025433f5bd24bca4fa1f65f99334e8be, type: 3}
-  WestWalkingSprite:
-  - {fileID: 5052247643355002824, guid: 025433f5bd24bca4fa1f65f99334e8be, type: 3}
-  - {fileID: 7063689992543968921, guid: 025433f5bd24bca4fa1f65f99334e8be, type: 3}
-  frameRate: 0.5
 --- !u!114 &9031684542559628733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,7 +251,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5051088203238825482}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.221, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -443,6 +430,8 @@ MonoBehaviour:
   - rid: 4633742841796100580
   - rid: 4633742841796100579
   - rid: 4633742841796100578
+  m_IsInitialised: 0
+  m_IsStarted: 0
   references:
     version: 2
     RefIds:

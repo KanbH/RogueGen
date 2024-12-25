@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3534997809883903652}
   - component: {fileID: 77264569123017146}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Movementbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.32
 --- !u!1 &1363578028120309910
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,6 +78,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7896693018874858546}
   - component: {fileID: 2593390639289925842}
+  - component: {fileID: 4921260239180685993}
   m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
@@ -155,6 +156,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4921260239180685993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363578028120309910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05dba184847081443975b6d62ff4a79a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7833674080378902576
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,6 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6221767377909816269}
   - component: {fileID: 1831013344544698666}
+  - component: {fileID: 1306231619832458563}
   - component: {fileID: 1989090612968093714}
   - component: {fileID: 7293975512385002233}
   - component: {fileID: 1627350835951316574}
@@ -209,6 +223,19 @@ MonoBehaviour:
   tags:
   - {fileID: 11400000, guid: 94a7b94a3e4a99f489938049540f1fe0, type: 2}
   - {fileID: 11400000, guid: ec77dc3fde5a6ac4d9dc64927b8a45af, type: 2}
+--- !u!114 &1306231619832458563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7833674080378902576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a522be81e337c0d4c89308d455a3c28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsSpawnAlignedToGrid: 1
 --- !u!50 &1989090612968093714
 Rigidbody2D:
   serializedVersion: 5
