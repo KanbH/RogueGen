@@ -201,7 +201,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.01, y: -0.25}
+  m_Offset: {x: -0.01, y: -0.3}
   m_Radius: 0.25
 --- !u!114 &3184766808217658387
 MonoBehaviour:
@@ -395,6 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cf0caab1257dd7438990628b84ffead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isKnockbackImmune: 0
   movementStatsSO: {fileID: 11400000, guid: 1ad1842f7b1b27a419280e2e44ead452, type: 2}
 --- !u!114 &1895762814566258516
 MonoBehaviour:

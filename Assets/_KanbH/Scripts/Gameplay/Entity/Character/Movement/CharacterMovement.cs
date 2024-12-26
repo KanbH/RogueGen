@@ -45,9 +45,12 @@ public class CharacterMovement : EntityMovement
 
     public override void ReceiveKnockback(Vector2 knockbackDirection, float magnitude)
     {
-        float calculatedMagnitude = magnitude / movementStatsSO.KnockbackResistance;
-        Debug.Log("AI has taken knockback");
-        _rigidbody2d.AddForce(knockbackDirection.normalized * calculatedMagnitude, ForceMode2D.Impulse);
+        if (!_isKnockbackImmune)
+        {
+            float calculatedMagnitude = magnitude / movementStatsSO.KnockbackResistance;
+            Debug.Log("AI has taken knockback");
+            _rigidbody2d.AddForce(knockbackDirection.normalized * calculatedMagnitude, ForceMode2D.Impulse);
+        }
     }
 
     public void SetMovementDirection(Vector2 direction)

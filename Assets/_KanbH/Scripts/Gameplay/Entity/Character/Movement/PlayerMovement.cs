@@ -50,9 +50,12 @@ public class PlayerMovement : EntityMovement
 
     public override void ReceiveKnockback(Vector2 knockbackDirection, float magnitude)
     {
-        float calculatedMagnitude = magnitude / movementStatsSO.KnockbackResistance;
-        Debug.Log("Player has taken knockback");
-        _rigidbody2d.AddForce(knockbackDirection.normalized * calculatedMagnitude, ForceMode2D.Impulse);
+        if (!_isKnockbackImmune)
+        {
+            float calculatedMagnitude = magnitude / movementStatsSO.KnockbackResistance;
+            Debug.Log("Player has taken knockback");
+            _rigidbody2d.AddForce(knockbackDirection.normalized * calculatedMagnitude, ForceMode2D.Impulse);
+        }
     }
 
     public override Vector2 GetMovement()
