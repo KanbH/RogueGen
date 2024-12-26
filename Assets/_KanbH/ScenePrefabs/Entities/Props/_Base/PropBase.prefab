@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1544119620361620751}
   - component: {fileID: 7197479597914962095}
   - component: {fileID: 6765847799120044729}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7785431942807245283}
   - component: {fileID: 3055576629492879054}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Movementbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ Transform:
   m_GameObject: {fileID: 7393508399658448863}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.562879, y: 25.264912, z: -0.02927844}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
