@@ -9,7 +9,7 @@ public class CharacterMovement : EntityMovement
     private CharacterStats _characterStats;
     private Rigidbody2D _rigidbody2d;
 
-    private Vector2 _movementDirection;
+    private Vector2 _movementDirection = Vector2.zero;
     private float _movementSpeed;
 
     private void Awake()
@@ -27,6 +27,11 @@ public class CharacterMovement : EntityMovement
     void FixedUpdate()
     {
         HandleMovement();
+    }
+
+    public override void SetMovementDirection(Vector2 direction)
+    {
+        _movementDirection = direction;
     }
 
     protected override void HandleMovement()
@@ -51,11 +56,6 @@ public class CharacterMovement : EntityMovement
             Debug.Log("AI has taken knockback");
             _rigidbody2d.AddForce(knockbackDirection.normalized * calculatedMagnitude, ForceMode2D.Impulse);
         }
-    }
-
-    public void SetMovementDirection(Vector2 direction)
-    {
-        _movementDirection = direction;
     }
 
     public override Vector2 GetMovement()

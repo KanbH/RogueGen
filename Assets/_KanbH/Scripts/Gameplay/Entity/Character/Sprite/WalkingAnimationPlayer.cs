@@ -13,6 +13,7 @@ public class WalkingAnimationPlayer : WalkingAnimation
     // Update is called once per frame
     void Update()
     {
+        /*
         _movement = _entityMovement.GetMovement();
         _lookingDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
         if (_movement.magnitude > 0)
@@ -39,5 +40,6 @@ public class WalkingAnimationPlayer : WalkingAnimation
                 _spriteRenderer.sprite = _currentWalkingSprite[0];
             }
         }
+        */
     }
 }

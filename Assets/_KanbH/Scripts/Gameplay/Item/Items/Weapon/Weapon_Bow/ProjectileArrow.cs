@@ -11,7 +11,7 @@ public class ProjectileArrow : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private bool initialized = false;
 
-    public void InitializeArrow(Vector3 direction, float speed, EntityController entityController)
+    public void InitializeArrow(Vector2 direction, float speed, EntityController entityController)
     {
         _speed = speed;
         _direction = direction.normalized;

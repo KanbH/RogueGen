@@ -6,20 +6,20 @@ using NUnit.Framework;
 public class PlayerController : EntityController
 {
 
-    private PlayerMovement _playerMovement;
+    private CharacterMovement _characterMovement;
     private InventoryManager _inventoryManager;
     private EquipmentHandler _equipmentHandler;
 
     void Awake()
     {
         _characterStats = GetComponent<CharacterStats>();
-        _playerMovement = GetComponent<PlayerMovement>();
+        _characterMovement = GetComponent<CharacterMovement>();
         _inventoryManager = GetComponent<InventoryManager>();
         _equipmentHandler = GetComponent<EquipmentHandler>();
 
         Assert.IsNotNull(_faction);
         Assert.IsNotNull(_characterStats);
-        Assert.IsNotNull(_playerMovement);
+        Assert.IsNotNull(_characterMovement);
         Assert.IsNotNull(_inventoryManager);
         Assert.IsNotNull(_equipmentHandler);
     }
@@ -35,6 +35,7 @@ public class PlayerController : EntityController
     private void DetectAttackInput()
     {
         // Detect left mouse button press
+        /*
         if (Input.GetMouseButtonDown(0)) // Left mouse button or any attack key
         {
             Vector2 direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition));
@@ -42,6 +43,7 @@ public class PlayerController : EntityController
             // Attempted to use weapon
             AttackAtDirection(direction);
         }
+        */
     }
 
     public override void AttackAtDirection(Vector2 AttackDirection)

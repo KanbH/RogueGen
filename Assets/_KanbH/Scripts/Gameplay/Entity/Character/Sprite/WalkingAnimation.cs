@@ -17,8 +17,8 @@ public class WalkingAnimation : MonoBehaviour
 
     protected SpriteRenderer _spriteRenderer;
     protected EntityMovement _entityMovement;
-    protected Vector2 _movement;
-    protected Vector2 _lookingDirection;
+    protected Vector2 _movement = Vector2.zero;
+    protected Vector2 _lookingDirection = Vector2.zero;
 
     private int _currentSpriteIndex = 0;
     protected bool _isWalking = false;
@@ -35,7 +35,6 @@ public class WalkingAnimation : MonoBehaviour
     {
         //Check if the character is moving (replace with your movement logic)
         _movement = _entityMovement.GetMovement();
-        _lookingDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
 
         if (_movement.magnitude > 0)
         {

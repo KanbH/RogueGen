@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : EntityMovement
+public class PlayerMovement : MonoBehaviour
 {
+    /*
     [SerializeField] private MovementStatsSO movementStatsSO;
 
     private CharacterStats _characterStats;
     private Rigidbody2D _rigidbody2d;
 
-    private Vector2 _movement;
+    private Vector2 _movementDirection = Vector2.zero;
     private float _movementSpeed;
 
     private void Awake()
     {
         _rigidbody2d = GetComponent<Rigidbody2D>();
         _characterStats = GetComponent<CharacterStats>();
-        _movement = new Vector2(0, 0);
     }
 
     void Update()
@@ -38,7 +38,7 @@ public class PlayerMovement : EntityMovement
         UpdateMovementSpeed();
         // Apply force-based movement
         //Debug.Log("Player's movespeed is " + _movementSpeed);
-        _rigidbody2d.AddForce(_movement.normalized * _movementSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
+        _rigidbody2d.AddForce(_movementDirection.normalized * _movementSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
 
     }
 
@@ -60,6 +60,7 @@ public class PlayerMovement : EntityMovement
 
     public override Vector2 GetMovement()
     {
-        return _movement;
+        return _movementDirection;
     }
+*/
 }
