@@ -258,12 +258,12 @@ PrefabInstance:
       objectReference: {fileID: 6634285990051954985}
     - target: {fileID: 6810067895888961711, guid: 574e5e076c5e780428ccfd233dd491f9, type: 3}
       propertyPath: _roomsToGenerate
-      value: 14
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6810067895888961711, guid: 574e5e076c5e780428ccfd233dd491f9, type: 3}
       propertyPath: '_roomPrefabList.Array.data[0]'
       value: 
-      objectReference: {fileID: 417078861964963130, guid: a65c9129b6cde774084beb81fdb92d5b, type: 3}
+      objectReference: {fileID: 417078861964963130, guid: af38ea8ce1138224aa9ea6e824abab28, type: 3}
     - target: {fileID: 8229107869936563051, guid: 574e5e076c5e780428ccfd233dd491f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

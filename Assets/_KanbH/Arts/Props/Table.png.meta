@@ -106,11 +106,11 @@ TextureImporter:
       name: Table_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 63
-        width: 32
-        height: 17
-      alignment: 0
+        x: 15
+        y: 31
+        width: 34
+        height: 18
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -128,10 +128,10 @@ TextureImporter:
       name: Table_1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 64
         y: 15
         width: 16
-        height: 33
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c938d982dd11d7f418f69f5cd0d3b71c
+    spriteID: 57f7dffd44d8b5a49b1508bdd6ba7f1e
     internalID: 0
     vertices: []
     indices: 

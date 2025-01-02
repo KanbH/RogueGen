@@ -201,7 +201,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.01, y: -0.3}
+  m_Offset: {x: -0.01, y: -0.25}
   m_Radius: 0.25
 --- !u!114 &3184766808217658387
 MonoBehaviour:
@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 1644787555082072019}
   - component: {fileID: 6596528658574720012}
   - component: {fileID: 3686626509354583566}
+  - component: {fileID: 2327074214978521806}
   - component: {fileID: 71738193254533321}
   - component: {fileID: 308559277936437745}
   - component: {fileID: 9155409355267301416}
@@ -337,6 +338,18 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.03, y: -0.03}
   m_Radius: 0.49
+--- !u!114 &2327074214978521806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6905014320686261617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f40019a72b0fe41b80f9f02b834b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &71738193254533321
 MonoBehaviour:
   m_ObjectHideFlags: 0

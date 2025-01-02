@@ -1,13 +1,11 @@
 using CharlieMadeAThing.NeatoTags.Core;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.Windows;
-using Input = UnityEngine.Input;
 
 public class WeaponBatController : WeaponController
 {
+    [SerializeField] private SoundFXSO SoundFXSO;
+
     public float swingSpeed = 650f; // degrees per second
     public float arcAngle = 160f;    // total arc angle (swing width)
     private float currentAngle = 0f;
@@ -20,6 +18,7 @@ public class WeaponBatController : WeaponController
     {
         if (isSwinging == false)
         {
+            SoundFXManager.Instance.PlaySoundFXClip(SoundFXSO, this.transform);
             StartSwing((attackDirection - attackerPosition).normalized);
         }
     }

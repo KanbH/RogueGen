@@ -10,6 +10,7 @@ public class PlayerController : EntityController
     private InventoryManager _inventoryManager;
     private EquipmentHandler _equipmentHandler;
 
+    //private AudioSource _audioSource;
     void Awake()
     {
         _characterStats = GetComponent<CharacterStats>();
@@ -17,33 +18,13 @@ public class PlayerController : EntityController
         _inventoryManager = GetComponent<InventoryManager>();
         _equipmentHandler = GetComponent<EquipmentHandler>();
 
+        //_audioSource = GetComponent<AudioSource>();
+
         Assert.IsNotNull(_faction);
         Assert.IsNotNull(_characterStats);
         Assert.IsNotNull(_characterMovement);
         Assert.IsNotNull(_inventoryManager);
         Assert.IsNotNull(_equipmentHandler);
-    }
-
-    void Update()
-    {
-        {
-            // Check for input to swing (you can replace this with a more complex input system later)
-            DetectAttackInput();
-        }
-    }
-
-    private void DetectAttackInput()
-    {
-        // Detect left mouse button press
-        /*
-        if (Input.GetMouseButtonDown(0)) // Left mouse button or any attack key
-        {
-            Vector2 direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition));
-
-            // Attempted to use weapon
-            AttackAtDirection(direction);
-        }
-        */
     }
 
     public override void AttackAtDirection(Vector2 AttackDirection)
@@ -68,6 +49,7 @@ public class PlayerController : EntityController
     {
         if (!_isInvincible)
         {
+            //_audioSource.Play();
             //bla bla bla defense calculation
             _characterStats.Health -= damage;
             Debug.Log($"Player took {damage} damage and have {_characterStats.Health} HP left");
