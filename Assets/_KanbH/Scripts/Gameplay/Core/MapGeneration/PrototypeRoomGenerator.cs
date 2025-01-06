@@ -35,6 +35,7 @@ public class PrototypeRoomGenerator : MonoBehaviour
 
     private void GenerateDungeon()
     {
+        if (_roomsToGenerate < 1) { Debug.LogError("Can't generate less than 1 room!"); }
         GenerateStartRoom();
         RepeatExtend(_roomsToGenerate);
     }
@@ -45,24 +46,11 @@ public class PrototypeRoomGenerator : MonoBehaviour
         Room room = startRoom.GetComponent<Room>();
         AddConnectionPoints(room.GetConnectionPoints());
         _roomList.Add(startRoom);
-        if (_nodeManager == null)
-        {
-            Debug.Log("nodemanager is null");
-        }
-        else
-        {
-            Debug.Log("nodemanager isn't null");
-        }
 
-        if ( room.WallTilemap != null )
-        {
-            Debug.Log("rwt isn't null");
-        }
+        if (_nodeManager == null) { Debug.LogError("nodemanager is null"); }
+        if ( room.WallTilemap == null ) { Debug.LogError("rwt is null"); }
+        if (startRoom == null) { Debug.LogError("startroom isn't null"); }
 
-        if (startRoom != null)
-        {
-            Debug.Log("startroom isn't null");
-        }
         _nodeManager.UpdateNodesfromTilemap(room.WallTilemap, startRoom);
     }
 

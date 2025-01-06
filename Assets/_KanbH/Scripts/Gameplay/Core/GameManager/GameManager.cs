@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     #region Components
     [SerializeField] private CreateMapBase _createMapBase;
     [SerializeField] private NodeManager _nodeManager;
-    [SerializeField] private PrototypeRoomGenerator _prototypeRoomGenerator;
+    [SerializeField] private MapGen _mapGen;
     #endregion
 
     #region Awake
@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     {
         Assert.IsNotNull(_createMapBase);
         Assert.IsNotNull(_nodeManager);
-        Assert.IsNotNull(_prototypeRoomGenerator);
+        Assert.IsNotNull(_mapGen);
     }
     #endregion
 
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         _createMapBase.InitMapBase();
-        _prototypeRoomGenerator.StartMapGeneration();
+        _mapGen.StartMapGeneration();
         _nodeManager.DestroyAllNodeGameObjects();
     }
     #endregion
