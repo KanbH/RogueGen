@@ -14,7 +14,7 @@ public class MapGen : MonoBehaviour
     private int _seed;
 
     [SerializeField] private int _roomsAmount = 20;
-    //[SerializeField] private bool _generateStartRoomAtCenter = false;
+    [SerializeField] private bool _generateStartRoomAtCenter = false;
     [SerializeField] private bool _refundFailedRoomGenerationAttemtps = false;
     [SerializeField] private List<GameObject> _roomPrefabList;
 
