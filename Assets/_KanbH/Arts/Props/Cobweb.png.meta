@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cobweb_0: 6930965033101088288
+      Cobweb_1: -2724239090924077606
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
