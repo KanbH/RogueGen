@@ -662,12 +662,20 @@ PrefabInstance:
       value: ABC
       objectReference: {fileID: 0}
     - target: {fileID: 6546626957017945799, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
+      propertyPath: _dungeonGen
+      value: 
+      objectReference: {fileID: 746458330}
+    - target: {fileID: 6546626957017945799, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
       propertyPath: _useSetSeed
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6546626957017945799, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
       propertyPath: _roomsAmount
-      value: 70
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546626957017945799, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
+      propertyPath: _generateStartRoomAtCenter
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6546626957017945799, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
       propertyPath: _refundFailedRoomGenerationAttemtps
@@ -676,7 +684,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7383557695396971899, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 746458330}
   m_SourcePrefab: {fileID: 100100000, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
 --- !u!114 &746458325 stripped
 MonoBehaviour:
@@ -689,17 +700,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91094f2890fa9fe41b214acdd35f93aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &746458326 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7383557695396971899, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
+  m_PrefabInstance: {fileID: 746458324}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &746458329 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6546626957017945799, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
   m_PrefabInstance: {fileID: 746458324}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 746458326}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95d471fea2988af4683b631ce8879106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &746458330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746458326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf1b1bedbd2c3f46a50867a237ec397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartRooms: []
+  CombatRooms:
+  - {fileID: 11400000, guid: 04ec206f589583f449e5c1813009c725, type: 2}
+  Corridors: []
+  TreasureRooms: []
+  OddityRooms: []
 --- !u!1001 &1062743500
 PrefabInstance:
   m_ObjectHideFlags: 0

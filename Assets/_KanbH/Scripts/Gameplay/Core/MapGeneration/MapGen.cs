@@ -5,8 +5,9 @@ public class MapGen : MonoBehaviour
 {
     [SerializeField] private CreateMapBase _createMapBase;
     [SerializeField] private NodeManager _nodeManager;
+    [SerializeField] private DungeonGen _dungeonGen;
     [SerializeField] private GameObject _mapHolderObject;
-
+    
     [SerializeField] private MapSizeSO _mapSizeSO;
 
     [SerializeField] private bool _useSetSeed = false;
@@ -16,7 +17,6 @@ public class MapGen : MonoBehaviour
     [SerializeField] private int _roomsAmount = 20;
     [SerializeField] private bool _generateStartRoomAtCenter = false;
     [SerializeField] private bool _refundFailedRoomGenerationAttemtps = false;
-    [SerializeField] private List<GameObject> _roomPrefabList;
 
     private List<GameObject> _roomList = new List<GameObject>();
     private List<ConnectionPoint> _unconnectedPoints = new List<ConnectionPoint>();
@@ -39,6 +39,7 @@ public class MapGen : MonoBehaviour
             _seed = Random.Range(0, 99999);
         }
         Random.InitState(_seed);
+        _dungeonGen.InitSeed(_seed);
     }
 
     //Reposition the generator to be at the center of world boundaries
@@ -76,7 +77,13 @@ public class MapGen : MonoBehaviour
 
     private void GenerateStartRoom()
     {
-        GameObject startRoom = Instantiate(_roomPrefabList[0], this.transform.position, Quaternion.identity, _mapHolderObject.transform);
+        GameObject startRoom = Instantiate(GetRandomPrefab(), this.transform.position, Quaternion.identity, _mapHolderObject.transform);
+
+        if (!_generateStartRoomAtCenter)
+        {
+            startRoom.transform.position = GetRandomStartRoomPosition();
+        }
+
         Room room = startRoom.GetComponent<Room>();
         AddConnectionPoints(room.GetConnectionPoints());
         _roomList.Add(startRoom);
@@ -88,15 +95,23 @@ public class MapGen : MonoBehaviour
         _nodeManager.UpdateNodesfromTilemap(room.WallTilemap, startRoom);
     }
 
+    private Vector2 GetRandomStartRoomPosition()
+    {
+        float xPosition = Random.Range(_mapSizeSO.LeftWorldBound + _mapSizeSO.MapPadding, _mapSizeSO.RightWorldBound - _mapSizeSO.MapPadding);
+        float yPosition = Random.Range(_mapSizeSO.BottomWorldBound + _mapSizeSO.MapPadding, _mapSizeSO.TopWorldBound - _mapSizeSO.MapPadding);
+        Vector2 vector2 = new Vector2(xPosition, yPosition);
+        return vector2;
+    }
+
     private void RepeatExtend(int times)
     {
         bool generateSuccess;
         for (int i = 0; i < _roomsAmount; i++)
         {
-            if (_unconnectedPoints.Count == 0) 
+            if (_unconnectedPoints.Count == 0)
             {
                 Debug.Log("Can't generate any more room");
-                return; 
+                return;
             }
             generateSuccess = ExtendDungeonByConnection();
             if (_refundFailedRoomGenerationAttemtps && generateSuccess == false) { _roomsAmount += 1; }
@@ -160,7 +175,7 @@ public class MapGen : MonoBehaviour
 
     private GameObject GetRandomPrefab()
     {
-        GameObject chosenPrefab = _roomPrefabList[Random.Range(0, _roomPrefabList.Count)];
+        GameObject chosenPrefab = _dungeonGen.GetRoomPrefab(RoomType.Combat);
         return chosenPrefab;
     }
 
