@@ -671,7 +671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6546626957017945799, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
       propertyPath: _roomsAmount
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6546626957017945799, guid: 088ec320e83abe74e8d71c5c3c504f29, type: 3}
       propertyPath: _generateStartRoomAtCenter
@@ -728,12 +728,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf1b1bedbd2c3f46a50867a237ec397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartRooms: []
+  CombatRatio: 5
+  TreasureRatio: 3
+  CorridorRatio: 1
+  OddityRatio: 1
+  StartRooms:
+  - {fileID: 11400000, guid: 1b8f93a67371d4b45b1ff25e8d4fddea, type: 2}
   CombatRooms:
-  - {fileID: 11400000, guid: 04ec206f589583f449e5c1813009c725, type: 2}
-  Corridors: []
-  TreasureRooms: []
-  OddityRooms: []
+  - {fileID: 11400000, guid: 69841018c64f3d64c8c71a22b048cc4a, type: 2}
+  TreasureRooms:
+  - {fileID: 11400000, guid: b2ae9d823c97ff8498a05156808b261e, type: 2}
+  Corridors:
+  - {fileID: 11400000, guid: 9821d31112a9f874ebea6c9a457440d0, type: 2}
+  OddityRooms:
+  - {fileID: 11400000, guid: 105b2fe1407670e4592be825c31283a5, type: 2}
 --- !u!1001 &1062743500
 PrefabInstance:
   m_ObjectHideFlags: 0

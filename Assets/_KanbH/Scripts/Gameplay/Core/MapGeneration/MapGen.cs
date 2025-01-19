@@ -7,7 +7,7 @@ public class MapGen : MonoBehaviour
     [SerializeField] private NodeManager _nodeManager;
     [SerializeField] private DungeonGen _dungeonGen;
     [SerializeField] private GameObject _mapHolderObject;
-    
+
     [SerializeField] private MapSizeSO _mapSizeSO;
 
     [SerializeField] private bool _useSetSeed = false;
@@ -77,7 +77,9 @@ public class MapGen : MonoBehaviour
 
     private void GenerateStartRoom()
     {
-        GameObject startRoom = Instantiate(GetRandomPrefab(), this.transform.position, Quaternion.identity, _mapHolderObject.transform);
+        RoomMetadata startPrefab = GetStartRoomPrefab();
+        GameObject startRoom = Instantiate(startPrefab.Prefab, this.transform.position, Quaternion.identity, _mapHolderObject.transform);
+        _dungeonGen.AddRoomContribution(startPrefab);
 
         if (!_generateStartRoomAtCenter)
         {
@@ -93,6 +95,18 @@ public class MapGen : MonoBehaviour
         if (startRoom == null) { Debug.LogError("startroom isn't null"); }
 
         _nodeManager.UpdateNodesfromTilemap(room.WallTilemap, startRoom);
+    }
+
+    private RoomMetadata GetStartRoomPrefab()
+    {
+        RoomMetadata chosenPrefab = _dungeonGen.GetRoomPrefabOfType(RoomType.Start);
+        return chosenPrefab;
+    }
+
+    private RoomMetadata GetRandomPrefab()
+    {
+        RoomMetadata chosenPrefab = _dungeonGen.GetRoomPrefabOfType(_dungeonGen.SelectNextRoomType());
+        return chosenPrefab;
     }
 
     private Vector2 GetRandomStartRoomPosition()
@@ -123,17 +137,22 @@ public class MapGen : MonoBehaviour
         ConnectionPoint originConnection = null;
         ConnectionPoint newConnection = null;
         GameObject newRoom = null;
+        RoomMetadata newRoomMetadata = null;
 
         originConnection = GetRandomUnconnectedPoint();
         if (originConnection != null)
         {
+            
             while (newConnection == null)
             {
-                GameObject roomToSpawn = GetRandomPrefab();
+
+                RoomMetadata RoomToSpawnMetadata = GetRandomPrefab();
+                GameObject roomToSpawn = RoomToSpawnMetadata.Prefab;
 
                 if (roomToSpawn.GetComponent<Room>().GetPointToConnect(originConnection.GetConnectionDirection()) != null)
                 {
                     newRoom = Instantiate(roomToSpawn, this.transform.position, Quaternion.identity, _mapHolderObject.transform);
+                    newRoomMetadata = RoomToSpawnMetadata;
                     newConnection = newRoom.GetComponent<Room>().GetPointToConnect(originConnection.GetConnectionDirection());
                 }
             }
@@ -150,6 +169,7 @@ public class MapGen : MonoBehaviour
             else
             {
                 _roomList.Add(newRoom);
+                _dungeonGen.AddRoomContribution(newRoomMetadata);
                 originConnection.SetConnectionUsed(true);
                 newConnection.SetConnectionUsed(true);
                 AddConnectionPoints(newRoom.GetComponent<Room>().GetConnectionPoints());
@@ -171,12 +191,6 @@ public class MapGen : MonoBehaviour
             _unconnectedPoints.Remove(chosenPoint);
             return null;
         }
-    }
-
-    private GameObject GetRandomPrefab()
-    {
-        GameObject chosenPrefab = _dungeonGen.GetRoomPrefab(RoomType.Combat);
-        return chosenPrefab;
     }
 
     private void RepositionNewRoom(ConnectionPoint room1Port, GameObject room2, ConnectionPoint room2Port)

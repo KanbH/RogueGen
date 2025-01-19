@@ -6,7 +6,8 @@ public class RoomMetadata : ScriptableObject
     public GameObject Prefab;
     public string Name;
     public RoomType Type;
-    public float Weight;
+    public float SelectWeight;
+    public float RatioContribution;
 }
 
 public enum RoomType
