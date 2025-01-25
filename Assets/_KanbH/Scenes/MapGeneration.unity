@@ -349,6 +349,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7494681757763312190, guid: 1caebf25cf881904c9f8694ea638e1f3, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7494681757763312190, guid: 1caebf25cf881904c9f8694ea638e1f3, type: 3}
+      propertyPath: 'm_ApplyToSortingLayers.Array.data[4]'
+      value: -1614846519
+      objectReference: {fileID: 0}
+    - target: {fileID: 7494681757763312190, guid: 1caebf25cf881904c9f8694ea638e1f3, type: 3}
+      propertyPath: 'm_ApplyToSortingLayers.Array.data[5]'
+      value: -867024233
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -472,6 +484,14 @@ PrefabInstance:
       propertyPath: managedReferences[4633742684282946292].m_Value
       value: 
       objectReference: {fileID: 1405974815}
+    - target: {fileID: 5392482991154760394, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5392482991154760394, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1614846519
+      objectReference: {fileID: 0}
     - target: {fileID: 5647071497521620298, guid: eaa4e58a646e0d740ad06df411a39644, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3
@@ -859,6 +879,18 @@ PrefabInstance:
       propertyPath: OnHealthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 44119415}
+    - target: {fileID: 1953630939735346582, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953630939735346582, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1614846519
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055002267867400827, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
+      propertyPath: m_Radius
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6905014320686261617, guid: 4b7dd35bc1edd6f4cb8db9f4647e7fde, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1179,6 +1211,14 @@ PrefabInstance:
       propertyPath: nodeManager
       value: 
       objectReference: {fileID: 746458325}
+    - target: {fileID: 4789453171121936683, guid: 1ee7d0d7562db26498564c0e64776df7, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789453171121936683, guid: 1ee7d0d7562db26498564c0e64776df7, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1614846519
+      objectReference: {fileID: 0}
     - target: {fileID: 5051088203238825482, guid: 1ee7d0d7562db26498564c0e64776df7, type: 3}
       propertyPath: m_Name
       value: Skeleton

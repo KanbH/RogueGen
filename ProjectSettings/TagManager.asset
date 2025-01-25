@@ -47,11 +47,11 @@ TagManager:
   - name: Floor
     uniqueID: 1098804831
     locked: 0
-  - name: Wall
-    uniqueID: 3470581481
+  - name: Entity
+    uniqueID: 2680120777
     locked: 0
-  - name: Foreground
-    uniqueID: 3701851233
+  - name: Effect
+    uniqueID: 1658994797
     locked: 0
   m_RenderingLayers:
   - Default
