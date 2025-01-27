@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MapSizeSO
   m_EditorClassIdentifier: 
   leftWorldBound: 0
-  rightWorldBound: 200
+  rightWorldBound: 150
   bottomWorldBound: 0
-  topWorldBound: 200
-  mapPadding: 50
+  topWorldBound: 150
+  mapPadding: 30

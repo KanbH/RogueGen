@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class ConnectionPoint : MonoBehaviour
 {
@@ -8,29 +9,20 @@ public class ConnectionPoint : MonoBehaviour
 
     [SerializeField] private Direction connectionDirection;
     
-    private bool _connectionUsed = false;
+    public bool ConnectionUsed { get; set; } = false;
 
     public GameObject RoomObject { get; set; }
 
-    public void SetConnectionUsed(bool x)
-    {
-        _connectionUsed = x;
-    }
-
-    public bool GetConnectionUsed()
-    {
-        return _connectionUsed;
-    }
+    //by Default the Close Prefab is activated but both variant's tilemap is only updated after Dungeon finished the generation
+    public GameObject OpenObject;
+    public Tilemap OpenWallTilemap;
+    public GameObject CloseObject;
+    public Tilemap CloseWallTilemap;
 
     public Direction ConnectionDirection
     {
         get { return connectionDirection; }
         set { connectionDirection = value; }
-    }
-
-    public Direction GetConnectionDirection()
-    {
-        return connectionDirection;
     }
 
     public Direction GetReverseDirection()

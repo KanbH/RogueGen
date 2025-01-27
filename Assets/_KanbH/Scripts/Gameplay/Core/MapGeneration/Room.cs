@@ -27,7 +27,7 @@ public class Room : MonoBehaviour
         ShufflePointList();
         foreach(ConnectionPoint point in _connectionPoints) 
         {
-            if (point.GetConnectionUsed() == false)
+            if (point.ConnectionUsed == false)
             {
                 return point;
             }
@@ -50,7 +50,7 @@ public class Room : MonoBehaviour
     {
         foreach (ConnectionPoint point in _connectionPoints)
         {
-            if (point.GetConnectionUsed() == false && point.GetReverseDirection() == direction)
+            if (point.ConnectionUsed == false && point.GetReverseDirection() == direction)
             {
                 return point;
             }

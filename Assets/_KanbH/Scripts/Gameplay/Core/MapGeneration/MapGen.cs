@@ -19,6 +19,7 @@ public class MapGen : MonoBehaviour
     [SerializeField] private bool _refundFailedRoomGenerationAttemtps = false;
 
     private List<GameObject> _roomList = new List<GameObject>();
+    private List<ConnectionPoint> _allPoints = new List<ConnectionPoint>();
     private List<ConnectionPoint> _unconnectedPoints = new List<ConnectionPoint>();
 
     public void StartMapGeneration()
@@ -73,6 +74,7 @@ public class MapGen : MonoBehaviour
         if (_roomsAmount < 1) { Debug.LogError("Can't generate less than 1 room!"); }
         GenerateStartRoom();
         RepeatExtend(_roomsAmount);
+        ActivateAllConnectedPointPrefab();
     }
 
     private void GenerateStartRoom()
@@ -142,18 +144,18 @@ public class MapGen : MonoBehaviour
         originConnection = GetRandomUnconnectedPoint();
         if (originConnection != null)
         {
-            
+
             while (newConnection == null)
             {
 
                 RoomMetadata RoomToSpawnMetadata = GetRandomPrefab();
                 GameObject roomToSpawn = RoomToSpawnMetadata.Prefab;
 
-                if (roomToSpawn.GetComponent<Room>().GetPointToConnect(originConnection.GetConnectionDirection()) != null)
+                if (roomToSpawn.GetComponent<Room>().GetPointToConnect(originConnection.ConnectionDirection) != null)
                 {
                     newRoom = Instantiate(roomToSpawn, this.transform.position, Quaternion.identity, _mapHolderObject.transform);
                     newRoomMetadata = RoomToSpawnMetadata;
-                    newConnection = newRoom.GetComponent<Room>().GetPointToConnect(originConnection.GetConnectionDirection());
+                    newConnection = newRoom.GetComponent<Room>().GetPointToConnect(originConnection.ConnectionDirection);
                 }
             }
 
@@ -170,8 +172,8 @@ public class MapGen : MonoBehaviour
             {
                 _roomList.Add(newRoom);
                 _dungeonGen.AddRoomContribution(newRoomMetadata);
-                originConnection.SetConnectionUsed(true);
-                newConnection.SetConnectionUsed(true);
+                originConnection.ConnectionUsed = true;
+                newConnection.ConnectionUsed = true;
                 AddConnectionPoints(newRoom.GetComponent<Room>().GetConnectionPoints());
                 _nodeManager.UpdateNodesfromTilemap(newRoom.GetComponent<Room>().WallTilemap, newRoom);
                 return true;
@@ -228,7 +230,23 @@ public class MapGen : MonoBehaviour
     {
         foreach (ConnectionPoint connectionPoint in connectionPoints)
         {
+            _allPoints.Add(connectionPoint);
             _unconnectedPoints.Add(connectionPoint);
+        }
+    }
+
+    private void ActivateAllConnectedPointPrefab()
+    {
+        foreach (ConnectionPoint point in _allPoints)
+        {
+            if (point.ConnectionUsed == true)
+            {
+                point.CloseObject.SetActive(false);
+                point.OpenObject.SetActive(true);
+
+                _nodeManager.UpdateNodesfromTilemap(point.OpenWallTilemap, point.RoomObject);
+            }
+            else { _nodeManager.UpdateNodesfromTilemap(point.CloseWallTilemap, point.RoomObject); }
         }
     }
 
