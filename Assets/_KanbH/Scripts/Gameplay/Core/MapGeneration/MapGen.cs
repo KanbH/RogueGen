@@ -113,8 +113,8 @@ public class MapGen : MonoBehaviour
 
     private Vector2 GetRandomStartRoomPosition()
     {
-        float xPosition = Random.Range(_mapSizeSO.LeftWorldBound + _mapSizeSO.MapPadding, _mapSizeSO.RightWorldBound - _mapSizeSO.MapPadding);
-        float yPosition = Random.Range(_mapSizeSO.BottomWorldBound + _mapSizeSO.MapPadding, _mapSizeSO.TopWorldBound - _mapSizeSO.MapPadding);
+        float xPosition = Random.Range(_mapSizeSO.LeftWorldBound + _mapSizeSO.MapPadding + 10, _mapSizeSO.RightWorldBound - _mapSizeSO.MapPadding - 10);
+        float yPosition = Random.Range(_mapSizeSO.BottomWorldBound + _mapSizeSO.MapPadding + 10, _mapSizeSO.TopWorldBound - _mapSizeSO.MapPadding - 10);
         Vector2 vector2 = new Vector2(xPosition, yPosition);
         return vector2;
     }
