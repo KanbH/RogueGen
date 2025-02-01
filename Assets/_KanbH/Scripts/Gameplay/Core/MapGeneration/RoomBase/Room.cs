@@ -8,6 +8,7 @@ public class Room : MonoBehaviour
 {
     [SerializeField] private List<ConnectionPoint> _connectionPoints = new List<ConnectionPoint>();
     [SerializeField] private Tilemap _wallTilemap;
+    [SerializeField] private PropSpawnerManager _propSpawnerManager;
 
     public Tilemap WallTilemap
     {
@@ -25,7 +26,7 @@ public class Room : MonoBehaviour
     public ConnectionPoint GetUnusedConnection()
     {
         ShufflePointList();
-        foreach(ConnectionPoint point in _connectionPoints) 
+        foreach (ConnectionPoint point in _connectionPoints)
         {
             if (point.ConnectionUsed == false)
             {
@@ -56,6 +57,14 @@ public class Room : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public void SpawnAllRoomProps()
+    {
+        if (_propSpawnerManager != null)
+        {
+            _propSpawnerManager.SpawnAllProps();
+        }
     }
 
     public List<ConnectionPoint> GetConnectionPoints()

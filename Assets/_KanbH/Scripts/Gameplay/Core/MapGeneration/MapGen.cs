@@ -75,6 +75,7 @@ public class MapGen : MonoBehaviour
         GenerateStartRoom();
         RepeatExtend(_roomsAmount);
         ActivateAllConnectedPointPrefab();
+        SpawnAllRoomsProps();
     }
 
     private void GenerateStartRoom()
@@ -247,6 +248,14 @@ public class MapGen : MonoBehaviour
                 _nodeManager.UpdateNodesfromTilemap(point.OpenWallTilemap, point.RoomObject);
             }
             else { _nodeManager.UpdateNodesfromTilemap(point.CloseWallTilemap, point.RoomObject); }
+        }
+    }
+
+    private void SpawnAllRoomsProps()
+    {
+        foreach (var room in _roomList)
+        {
+            room.GetComponent<Room>().SpawnAllRoomProps();
         }
     }
 
