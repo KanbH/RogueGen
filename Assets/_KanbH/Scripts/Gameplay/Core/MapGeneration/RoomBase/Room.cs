@@ -6,9 +6,11 @@ using UnityEngine.Tilemaps;
 
 public class Room : MonoBehaviour
 {
+    [SerializeField] public RoomMetadata RoomMetadata;
     [SerializeField] private List<ConnectionPoint> _connectionPoints = new List<ConnectionPoint>();
     [SerializeField] private Tilemap _wallTilemap;
     [SerializeField] private PropSpawnerManager _propSpawnerManager;
+    [SerializeField] private EnemySpawnerManager _enemySpawnerManager;
 
     public Tilemap WallTilemap
     {
@@ -21,6 +23,16 @@ public class Room : MonoBehaviour
         {
             connectionPoint.RoomObject = this.gameObject;
         }
+        if (!(_propSpawnerManager != null))
+        {
+            _propSpawnerManager = this.gameObject.GetComponent<PropSpawnerManager>();
+        }
+        if (!(_enemySpawnerManager != null))
+        {
+            _enemySpawnerManager = this.gameObject.GetComponent<EnemySpawnerManager>();
+        }
+
+        _enemySpawnerManager.RoomMaxThreatLevel = RoomMetadata.MaxThreatLevel;
     }
 
     public ConnectionPoint GetUnusedConnection()
@@ -61,10 +73,7 @@ public class Room : MonoBehaviour
 
     public void SpawnAllRoomProps()
     {
-        if (_propSpawnerManager != null)
-        {
-            _propSpawnerManager.SpawnAllProps();
-        }
+        _propSpawnerManager.SpawnAllProps();
     }
 
     public List<ConnectionPoint> GetConnectionPoints()

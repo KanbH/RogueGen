@@ -76,6 +76,7 @@ public class MapGen : MonoBehaviour
         RepeatExtend(_roomsAmount);
         ActivateAllConnectedPointPrefab();
         SpawnAllRoomsProps();
+        GenerateLevelExit();
     }
 
     private void GenerateStartRoom()
@@ -257,6 +258,21 @@ public class MapGen : MonoBehaviour
         {
             room.GetComponent<Room>().SpawnAllRoomProps();
         }
+    }
+
+    private void GenerateLevelExit()
+    {
+        List<GameObject> validRooms = new List<GameObject>();
+        foreach (var room in _roomList)
+        {
+            RoomType roomType = room.GetComponent<Room>().RoomMetadata.Type;
+            if (roomType == RoomType.Combat || roomType == RoomType.Treasure || roomType == RoomType.Oddity)
+            {
+                validRooms.Add(room);
+            }
+        }
+        GameObject exitSpawnRoom = validRooms[Random.Range(0, validRooms.Count)];
+        exitSpawnRoom.GetComponent<PropSpawnerManager>().SpawnLevelExit();
     }
 
     private bool CheckPositionInsideInnerBoundary(Vector2 position)

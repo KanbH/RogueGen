@@ -6,6 +6,7 @@ public class RoomMetadata : ScriptableObject
     public GameObject Prefab;
     public string Name;
     public RoomType Type;
+    public int MaxThreatLevel;
     public float SelectWeight;
     public float RatioContribution;
 }

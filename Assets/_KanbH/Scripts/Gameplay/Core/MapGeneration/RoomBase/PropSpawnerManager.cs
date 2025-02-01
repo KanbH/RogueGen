@@ -4,18 +4,18 @@ using UnityEngine;
 public class PropSpawnerManager : MonoBehaviour
 {
     [SerializeField] private List<PropSpawner> PropSpawner;
+    [SerializeField] private GeneralPropSpawner GeneralPropSpawner;
 
     public void SpawnAllProps()
     {
-        if (PropSpawner.Count == 0)
-        {
-            Debug.LogWarning("No PropSpawners found for this PropSpawnerManager");
-            return;
-        }
-
         foreach (var prop in PropSpawner)
         {
             prop.SpawnProp();
         }
+    }
+
+    public void SpawnLevelExit()
+    {
+        GeneralPropSpawner.SpawnLevelExit();
     }
 }
